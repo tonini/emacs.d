@@ -3,7 +3,7 @@ require 'erb'
 
 task :default => :install
 
-desc "install the dot files into user's home directory"
+desc "install emacs config into user's home directory"
 task :install do
   replace_all = false
   Dir['*'].each do |file|

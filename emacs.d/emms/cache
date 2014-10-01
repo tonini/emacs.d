@@ -1,4 +1,0 @@
-;;; .emms-cache -*- mode: emacs-lisp; coding: utf-8; -*-
-(puthash "/Users/tonini/Downloads/01-intro.mp3" '(*track* (type . file) (name . "/Users/tonini/Downloads/01-intro.mp3") (metadata) (info-mtime 20919 64010 0 0)) emms-cache-db)
-(puthash "/Users/tonini/Music/iTunes/iTunes Media/Music/Aretha Franklin/Spirit In the Dark/03 Pullin'.m4a" '(*track* (type . file) (name . "/Users/tonini/Music/iTunes/iTunes Media/Music/Aretha Franklin/Spirit In the Dark/03 Pullin'.m4a") (metadata) (info-mtime 20886 9496 0 0)) emms-cache-db)
-(puthash "/Users/tonini/Downloads/zelda.mp3" '(*track* (type . file) (name . "/Users/tonini/Downloads/zelda.mp3") (metadata) (info-mtime 20919 64010 0 0)) emms-cache-db)
