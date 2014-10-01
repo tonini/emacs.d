@@ -1,0 +1,17 @@
+*.elc
+\#*
+doc/*
+emacs.d/bookmarks
+emacs.d/backup
+emacs.d/backup.*
+emacs.d/org-clock-save.el
+emacs.d/ac-comphist.dat
+emacs.d/tramp
+emacs.d/elpa
+emacs.d/var
+emacs.d/eshell
+emacs.d/ido.last
+emacs.d/recentf
+emacs.d/.caskemacs.d/vendor
+emacs.d/vendor
+emcas.d/.cask

@@ -1,0 +1,9 @@
+;;; emms history -*- mode: emacs-lisp; coding: utf-8; -*-
+(
+;; active playlist
+" *EMMS Playlist*"
+;; playlists: ((BUFFER_NAME SELECT_POSITION TRACKS) ...)
+((" *EMMS Playlist*" 1 ((*track* (type . file) (name . "/Users/tonini/Downloads/zelda.mp3") (metadata) (info-mtime 20919 64010 0 0)))))
+;; play method
+((emms-repeat-track) (emms-repeat-playlist))
+)
