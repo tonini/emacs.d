@@ -9,7 +9,7 @@
 ;;
 ;; I have a modern machine ;)
 ;;
-(setq gc-cons-threshold 20000000)
+(setq gc-cons-threshold 40000000)
 
 (setq tonini-vendor-dir
       (expand-file-name "~/.emacs.d/vendor/"))
