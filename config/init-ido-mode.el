@@ -15,3 +15,5 @@
 
 (eval-after-load "ido-vertical-mode" '(tonini-load-setup-ido-vertical-mode))
 (eval-after-load "flx-ido" '(tonini-load-setup-flx-ido))
+
+(provide 'init-ido-mode)

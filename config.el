@@ -33,6 +33,5 @@
                         coffee-script
                         floobits
                         karma
+                        elpa
                         ))
-
-(setq cabbage-theme 'color-theme-twilight)

@@ -4,7 +4,7 @@
 (add-to-list 'cabbage-vendor-dirs (expand-file-name "~/Projects/cabbage-contrib/vendor/"))
 
 ;; `gc-cons-threshold'
-;;
+
 ;; http://www.gnu.org/software/emacs/manual/html_node/elisp/Garbage-Collection.html
 ;;
 ;; I have a modern machine ;)
@@ -14,14 +14,19 @@
 (setq tonini-vendor-dir
       (expand-file-name "~/.emacs.d/vendor/"))
 
-(setq tonini-cabbage-private-dir
-      (expand-file-name "~/.emacs.d/private/"))
+(add-to-list 'load-path (expand-file-name "config" user-emacs-directory))
 
-(defun tonini-load-private-setup ()
+(defun tonini-pre-bundle-hook ()
+  (setq custom-enabled-themes '(github)))
+
+(defun tonini-load-inits ()
   ;; Load all *.el file under the private directory
-  (dolist (file (directory-files tonini-cabbage-private-dir t "\\.el$"))
-    (load file))
+  (require 'init-elpa)
+  (require 'init-ido-mode)
+  ;; (require 'init-smart-mode-line)
+  (require 'init-display)
+  (require 'init-functions)
+  (require 'init-bindings))
 
-  (setq rspec-use-bundler-when-possible t))
-
-(add-hook 'cabbage-initialized-hook 'tonini-load-private-setup)
+(add-hook 'cabbage-pre-bundle-hook 'tonini-pre-bundle-hook)
+(add-hook 'cabbage-initialized-hook 'tonini-load-inits)
