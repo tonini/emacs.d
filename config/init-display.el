@@ -12,11 +12,13 @@
 (set-frame-parameter nil 'fullscreen 'fullboth)
 (setq default-cursor-type 'box)
 
-(load (expand-file-name "~/.emacs.d/themes/color-theme-github.el"))
+(load (expand-file-name "~/.emacs.d/themes/tonini.el"))
 
-(set-face-attribute 'mode-line nil  :height 140)
-(set-face-attribute 'mode-line nil  :background "Orange")
-(set-face-attribute 'region nil :background "#e5d5a4")
-(set-face-background 'hl-line "#e7e4d8")
+(set-face-attribute 'mode-line nil :height 130)
+(set-face-attribute 'mode-line-inactive nil  :height 130)
+;; (set-face-attribute 'mode-line nil  :background "Orange")
+;; (set-face-attribute 'region nil :background "#525d60")
+;; (set-face-foreground 'hl-line "#000000")
+(set-cursor-color "#eeeeee")
 
 (provide 'init-display)

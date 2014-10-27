@@ -1,0 +1,30 @@
+;; Emacs-W3 HTTP cookies file
+;; Automatically generated file!!! DO NOT EDIT!!!
+
+(setq url-cookie-storage
+ '((".google.ch"
+  [url-cookie "PREF" "ID=53e06be20825f307:U=e7abb9d39097462c:FF=0:TM=1413874275:LM=1413874285:S=JA4qdPdABn-3-b6h" "20-Oct-2016 06:51:25.00 GMT" "/" ".google.ch" nil]
+  [url-cookie "NID" "67=HzwDZIHK_kmBr4x2pft8oPJxoXEdNuvhzkVGWLRrqvWGStAlglIWyWlEze5qMknNIcEc0knBLGb1yA-0gXz9_YSVDmqDg68rj2lll_2-m5ZDxDTwmErAh7fHipezYWUa" "22-Apr-2015 06:51:15.00 GMT" "/" ".google.ch" nil]
+  [url-cookie "HttpOnly" nil "22-Apr-2015 06:51:15.00 GMT" "/" ".google.ch" nil])
+ (".google.com"
+  [url-cookie "PREF" "ID=d6edc023980c7c05:U=76d02c118dac8e7a:FF=0:TM=1413874396:LM=1413874413:S=w68CECOsIxrL394A" "20-Oct-2016 06:53:33.00 GMT" "/" ".google.com" nil]
+  [url-cookie "NID" "67=fohib47WLZ9JZXTQ1C2RbXCrnNBF6nl7ArKRzMQyB62c331P30AyoqEY0C0DqBMMH-F16EaBF6fr2XGzhdk5eNsSvpwqcu-L6zVc8JqgybdI8ArH85yaBQOqpvGP72UI" "22-Apr-2015 06:53:16.00 GMT" "/" ".google.com" nil]
+  [url-cookie "HttpOnly" nil "22-Apr-2015 06:53:16.00 GMT" "/" ".google.com" nil])
+ ("getpocket.com"
+  [url-cookie "sess_guid" "4d4TMA07g8fnuZh333d1f7bdaXpog9532b6Ce0Hpk8I81eR215e49O5bBe1CAcQz" "17-Oct-2029 06:50:12.00 GMT" "/" "getpocket.com" nil]
+  [url-cookie "sess_user_id" "9446861" "21-Oct-2015 12:39:14.00 GMT" "/" "getpocket.com" nil]
+  [url-cookie "sess_password" "b711f5c6ba50575e5cfafac9f47b106c" "21-Oct-2015 12:39:14.00 GMT" "/" "getpocket.com" nil]
+  [url-cookie "sess_key" "9997ffda3e6437499ea69041ace2549c" "21-Oct-2015 12:39:14.00 GMT" "/" "getpocket.com" nil]
+  [url-cookie "sess_nonce" "0.24048200+1413874228fffc37c8912fc4b33af86c248c46e8ed2bec833f" "21-Oct-2015 12:39:14.00 GMT" "/" "getpocket.com" nil]
+  [url-cookie "a_widget_t" "89d5c3e73a2b2a46565c3ca113f2bbdfd1cea79a" "21-Oct-2015 12:39:14.00 GMT" "/" "getpocket.com" nil]))
+)
+(setq url-cookie-secure-storage
+ '((".github.com"
+  [url-cookie "logged_in" "no" "21-Oct-2034 06:49:28.00 GMT" "/" ".github.com" t]
+  [url-cookie "HttpOnly" nil "21-Oct-2034 06:49:28.00 GMT" "/" ".github.com" t]))
+)
+
+;; Local Variables:
+;; version-control: never
+;; no-byte-compile: t
+;; End:

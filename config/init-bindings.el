@@ -20,15 +20,12 @@
 ;; dirtree
 (cabbage-global-set-key (kbd "C-x t") 'dired-other-window)
 
-;; emacs-git-gutter
-(global-set-key (kbd "C-x v t") 'git-gutter:toggle)
-(global-set-key (kbd "C-x v ?") 'git-gutter:popup-hunk)
+;; Popwin
+(cabbage-global-set-key (kbd "C-z") popwin:keymap)
 
-;; Jump to next/previous hunk
-(global-set-key (kbd "C-x v p") 'git-gutter:previous-hunk)
-(global-set-key (kbd "C-x v n") 'git-gutter:next-hunk)
+;; Find file
+;; (cabbage-global-set-key (kbd "M-t") 'find-file-in-project)
 
-;; Revert current hunk
-(global-set-key (kbd "C-x v r") 'git-gutter:revert-hunk)
+
 
 (provide 'init-bindings)

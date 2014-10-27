@@ -29,7 +29,7 @@
                         dirtree
                         ag
                         rvm
-                        elixir
+                        ;; elixir
                         coffee-script
                         floobits
                         karma

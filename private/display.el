@@ -11,3 +11,5 @@
 
 (set-frame-parameter nil 'fullscreen 'fullboth)
 (setq default-cursor-type 'box)
+
+(setq linum-format " %d ")

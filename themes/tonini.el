@@ -1,107 +1,145 @@
-;;; github-theme.el --- Github color theme for GNU Emacs 24
+;;; rubytapas-theme.el --- rubytapas theme with Emacs theme engine
 
-;; Copyright (C) 2011 Dudley Flanders <dudley@steambone.org>
+;; Copyright (C) 2013 by Adam Lloyd
+;; Copyright (C) 2013 by Syohei YOSHIDA
+;; Copyright (C) 2013 by Avdi Grimm
 
-;; Author: Dudley Flanders
-;; Adapted-By: Yesudeep Mangalapilly
-;; Adapted-By: Joshua Timberman
-;; Keywords: github color theme
-;; URL: http://github.com/dudleyf/color-theme-github
-;; Version: 0.0.3
-;; Package-Requires: ((color-theme "6.6.1"))
+;; Author: Avdi Grimm <avdi@avdi.org>
+;; URL:
+;; Version:
+;; X-Original-Version: 0.01
 
-;; This file is not a part of GNU Emacs.
+;; This program is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
 
-;;; License:
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
 
-;; This is free software; you can redistribute it and/or modify it under
-;; the terms of the GNU General Public License as published by the Free
-;; Software Foundation; either version 2, or (at your option) any later
-;; version.
-;;
-;; This is distributed in the hope that it will be useful, but WITHOUT
-;; ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
-;; FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
-;; for more details.
-;;
 ;; You should have received a copy of the GNU General Public License
-;; along with GNU Emacs; see the file COPYING.  If not, write to the
-;; Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston,
-;; MA 02111-1307, USA.
+;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+;;; Commentary:
+
+;; This is a trivially modified version of the "Molokai" color theme.
+;; It increases the contrast of comments for better visibility.
 
 ;;; Code:
 
-(deftheme github "Port of Github Theme for Emacs 24")
+(deftheme rubytapas
+  "rubytapas theme")
 
-(let ((*background-color*  "#f8f8ff")
-      (*background-mode*  'light)
-      (*border-color*  "black")
-      (*cursor-color*  "#000000")
-      (*foreground-color*  "#000000")
-      (*mouse-color*  "#bcd5fa"))
+(custom-theme-set-faces
+ 'rubytapas
 
-  (custom-theme-set-faces
-   'github
+ '(default ((t (:background "#1B1D1E" :foreground "#F8F8F2"))))
+ '(cursor ((t (:foregound "#F8F8F0"))))
 
-   `(default ((t (:stipple nil :background "#f8f8ff" :foreground "#000000" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal))))
-   `(css-property ((t (:foreground "#0086b3"))))
-   `(css-selector ((t (:foreground "#990000"))))
-   `(cursor ((t (:background "#a7a7a7"))))
-   `(ecb-default-general-face ((t (:height 0.9))))
-   `(ecb-default-highlight-face ((t (:background "#bcd5fa" :foreground "#000000"))))
-   `(ecb-directories-general-face ((t (:bold t :weight bold))))
-   `(ecb-source-in-directories-buffer-face ((t (:foreground "#445588"))))
-   `(erb-comment-delim-face ((t (:italic t :bold t :slant italic :foreground "#999988" :weight bold))))
-   `(erb-comment-face ((t (:bold t :background "#eeeeee" :foreground "#999988" :weight bold))))
-   `(erb-delim-face ((t (:bold t :weight bold))))
-   `(erb-exec-delim-face ((t (:bold t :weight bold))))
-   `(erb-exec-face ((t (:background "#eeeeee"))))
-   `(erb-face ((t (:background "#eeeeee"))))
-   `(erb-out-delim-face ((t (:bold t :foreground "#445588" :weight bold))))
-   `(erb-out-face ((t (:background "#eeeeee"))))
-   `(font-lock-builtin-face ((t (nil))))
-   `(font-lock-comment-delimiter-face ((t (:italic t :slant italic :foreground "#999988"))))
-   `(font-lock-comment-face ((t (:italic t :foreground "#999988" :slant italic))))
-   `(font-lock-constant-face ((t (:foreground "#990073"))))
-   `(font-lock-doc-face ((t (:foreground "#dd1144"))))
-   `(font-lock-function-name-face ((t (:foreground "#990000"))))
-   `(font-lock-keyword-face ((t (:bold t :weight bold))))
-   `(font-lock-negation-char-face ((t (nil))))
-   `(font-lock-reference-face ((t (nil))))
-   `(font-lock-regexp-grouping-backslash ((t (:foreground "#009926"))))
-   `(font-lock-regexp-grouping-construct ((t (:foreground "#009926"))))
-   `(font-lock-string-face ((t (:foreground "#dd1144"))))
-   `(font-lock-type-face ((t (:foreground "#445588"))))
-   `(font-lock-variable-name-face ((t (:foreground "#0086b3"))))
-   `(highlight ((t (:background "#d2d9e3"))))
-   `(link ((t (:foreground "blue1" :underline t))))
-   `(link-visited ((t (:underline t :foreground "magenta4"))))
-   `(minibuffer-prompt ((t (:foreground "#445588"))))
-   `(mode-line ((t (:background "black" :foreground "black" :box (:line-width -1 :style released-button) :height 0.85))))
-   `(mouse ((t (:background "#dde1e7"))))
-   `(quack-about-face ((t (:family "Helvetica"))))
-   `(quack-about-title-face ((t (:bold t :foreground "#008000" :weight bold :height 2.0 :family "Helvetica"))))
-   `(quack-banner-face ((t (:family "Helvetica"))))
-   `(quack-pltfile-dir-face ((t (:bold t :background "gray33" :foreground "white" :weight bold :height 1.2 :family "Helvetica"))))
-   `(quack-pltfile-file-face ((t (:bold t :background "gray66" :foreground "black" :weight bold :height 1.2 :family "Helvetica"))))
-   `(quack-pltfile-prologue-face ((t (:background "gray66" :foreground "black"))))
-   `(quack-pltish-class-defn-face ((t (:bold t :weight bold :foreground "purple3"))))
-   `(quack-pltish-comment-face ((t (:foreground "cyan4"))))
-   `(quack-pltish-defn-face ((t (:bold t :foreground "blue3" :weight bold))))
-   `(quack-pltish-keyword-face ((t (:bold t :weight bold))))
-   `(quack-pltish-module-defn-face ((t (:bold t :weight bold :foreground "purple3"))))
-   `(quack-pltish-paren-face ((t (:foreground "red3"))))
-   `(quack-pltish-selfeval-face ((t (:foreground "green4"))))
-   `(quack-smallprint-face ((t (:height 0.8 :family "Courier"))))
-   `(quack-threesemi-h1-face ((t (:bold t :weight bold :height 1.4 :family "Helvetica"))))
-   `(quack-threesemi-h2-face ((t (:bold t :weight bold :height 1.2 :family "Helvetica"))))
-   `(quack-threesemi-h3-face ((t (:bold t :weight bold :family "Helvetica"))))
-   `(quack-threesemi-semi-face ((t (:background "#c0ffff" :foreground "#a0ffff"))))
-   `(quack-threesemi-text-face ((t (:background "#c0ffff" :foreground "cyan4"))))
-   `(region ((t (:background "#bcd5fa"))))
-   `(show-paren-match ((t (:background "#fff6a9"))))
-   `(show-paren-mismatch ((t (:background "#dd1144"))))))
+ '(bold ((t (:weight bold))))
+ '(bold-italic ((t (:weight bold :slant italic))))
+ '(custom-face-tag ((t (:foreground "#66D9EF" :weight bold))))
+ '(custom-state ((t (:foreground "#A6E22E"))))
+ '(italic ((t (:slant italic))))
+ '(region ((t (:background "#403D3D"))))
+ '(underline ((t (:underline t))))
+ '(css-selector ((t (:foreground "#F92672"))))
+ '(css-property ((t (:foreground "#66D9EF"))))
+ '(diff-added ((t (:foreground "#A6E22E" :weight bold))))
+ '(diff-context ((t (:foreground "#F8F8F2"))))
+ '(diff-file-header ((t (:foreground "#66D9EF" :background nil))))
+ '(diff-indicator-added ((t (:foreground "#A6E22E"))))
+ '(diff-indicator-removed ((t (:foreground "#F92672"))))
+ '(diff-header ((t (:foreground "#F8F8F2" :background "#232526"))))
+ '(diff-hunk-header ((t (:foreground "#AE81FF" :background "#232526"))))
+ '(diff-removed ((t (:foreground "#F92672" :weight bold))))
+ '(escape-glyph ((t (:foreground "#E6DB74"))))
+ '(minibuffer-prompt ((t (:foreground "#66D9EF"))))
+ '(mode-line ((t (:foreground "#000000" :background "#F8F8F0"
+                  :box (:line-width 1 :color "#000000" :style released-button)))))
+ '(mode-line-buffer-id ((t (:foreground "#FF0000" :weight semi-bold))))
+ '(mode-line-inactive ((t (:foreground "#BCBCBC" :background "#000000"
+                           ':box (:line-width 1 :color "#232526")))))
+ '(mode-line-mousable ((t (:foreground "#BCBCBC" :background "#000000"))))
+ '(mode-line-mousable-minor-mode ((t (:foreground "#BCBCBC" :background "#000000"))))
+ '(font-lock-builtin-face ((t (:foreground "#A6E22E"))))
+ '(font-lock-comment-face ((t (:foreground "#9860B6DABD62" :slant italic))))
+ '(font-lock-comment-delimiter-face ((t (:foreground "#465457" :slant italic))))
+ '(font-lock-constant-face ((t (:foreground "#AE81FF"))))
+ '(font-lock-doc-face ((t (:foreground "#E6DB74" :slant italic))))
+ '(font-lock-function-name-face ((t (:foreground "#F92672"))))
+ '(font-lock-keyword-face ((t (:foreground "#66D9EF"))))
+ '(font-lock-negation-char-face ((t (:weight bold))))
+ '(font-lock-preprocessor-face ((t (:foreground "#A6E22E"))))
+ '(font-lock-regexp-grouping-backslash ((t (:weight bold))))
+ '(font-lock-regexp-grouping-construct ((t (:weight bold))))
+ '(font-lock-string-face ((t (:foreground "#E6DB74"))))
+ '(font-lock-type-face ((t (:foreground "#66D9EF"))))
+ '(font-lock-variable-name-face ((t (:foreground "#F92672"))))
+ '(font-lock-warning-face ((t (:foreground "#FFFFFF" ':background "#333333"))))
+ '(fringe ((t (:background "#232526"))))
+ '(highlight ((t (:foreground "#000000" :background "#C4BE89"))))
+ '(hl-line ((t (:background "#293739" :inherit nil))))
+ '(col-highlight ((t (:background "#293739" :inherit nil))))
+ ;; '(vline ((t (:background "#293739" :inherit nil))))
+ '(icompletep-choices ((t (:foreground "#F92672"))))
+ '(icompletep-determined ((t (:foreground "#A6E22E"))))
+ '(icompletep-keys ((t (:foreground "#F92672"))))
+ '(icompletep-nb-candidates ((t (:foreground "#AE81FF"))))
+ '(isearch ((t (:foreground "#C4BE89" :background "#000000"))))
+ '(isearch-fail ((t (:foreground "#FFFFFF" :background "#333333"))))
+ '(lazy-highlight ((t (:foreground "#465457" :background "#000000"))))
+ '(markdown-italic-face ((t (:slant italic))))
+ '(markdown-bold-face ((t (:weight bold))))
+ '(markdown-header-face ((t (:weight normal))))
+ '(markdown-header-face-1 ((t (:foreground "#66D9EF"))))
+ '(markdown-header-face-2 ((t (:foreground "#F92672"))))
+ '(markdown-header-face-3 ((t (:foreground "#A6E22E"))))
+ '(markdown-header-face-4 ((t (:foreground "#AE81FF"))))
+ '(markdown-header-face-5 ((t (:foreground "#E6DB74"))))
+ '(markdown-header-face-6 ((t (:foreground "#66D9EF"))))
+ '(markdown-inline-code-face ((t (:foreground "#66D9EF"))))
+ '(markdown-list-face ((t (:foreground "#A6E22E"))))
+ '(markdown-blockquote-face ((t (:slant italic))))
+ '(markdown-pre-face ((t (:foreground "#AE81FF"))))
+ '(markdown-link-face ((t (:foreground "#66D9EF"))))
+ '(markdown-reference-face ((t (:foreground "#66D9EF"))))
+ '(markdown-url-face ((t (:foreground "#E6DB74"))))
+ '(markdown-link-title-face ((t (:foreground "#F92672"))))
+ '(markdown-comment-face ((t (:foreground "#465457"))))
+ '(markdown-math-face ((t (:foreground "#AE81FF" :slant italic))))
+ '(mumamo-background-chunk-major ((t (:background "#272822"))))
+ '(mumamo-background-chunk-submode ((t (:background "#1B1D1E"))))
+ '(outline-1 ((t (:foreground "#66D9EF"))))
+ '(outline-2 ((t (:foreground "#F92672"))))
+ '(outline-3 ((t (:foreground "#A6E22E"))))
+ '(outline-4 ((t (:foreground "#AE81FF"))))
+ '(outline-5 ((t (:foreground "#E6DB74"))))
+ '(outline-6 ((t (:foreground "#66D9EF"))))
+ '(outline-7 ((t (:foreground "#F92672"))))
+ '(outline-8 ((t (:foreground "#A6E22E"))))
+ '(secondary-selection ((t (:background "#272822"))))
+ '(show-paren-match-face ((t (:foreground "#000000" :background "#FD971F"))))
+ '(show-paren-mismatch-face ((t (:foreground "#960050" :background "#1E0010"))))
+ '(widget-inactive-face ((t (:background "#ff0000"))))
+ '(woman-addition ((t (:foreground "#AE81FF"))))
+ '(woman-bold ((t (:foreground "#F92672"))))
+ '(woman-italic ((t (:foreground "#A6E22E"))))
+ '(woman-unknown ((t (:foreground "#66D9EF"))))
+ '(org-level-1 ((t (:foreground "#66D9EF"))))
+ '(org-level-2 ((t (:foreground "#F92672"))))
+ '(org-level-3 ((t (:foreground "#A6E22E"))))
+ '(org-level-4 ((t (:foreground "#AE81FF"))))
+ '(org-level-5 ((t (:foreground "#E6DB74"))))
+ '(org-level-6 ((t (:foreground "#66D9EF")))))
 
-(provide-theme 'github)
+;;;###autoload
+(when load-file-name
+  (add-to-list 'custom-theme-load-path
+               (file-name-as-directory (file-name-directory load-file-name))))
 
-;;; color-theme-github.el ends here
+(provide-theme 'rubytapas)
+
+;;; rubytapas-theme.el ends here
