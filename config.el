@@ -29,9 +29,14 @@
                         dirtree
                         ag
                         rvm
-                        ;; elixir
+                        tonini-elixir
+                        tonini-ido-mode
+                        tonini-popwin
+                        tonini-karma
+                        tonini-popwin
+                        tonini-display
+                        tonini-bindings
                         coffee-script
                         floobits
                         karma
-                        elpa
                         ))

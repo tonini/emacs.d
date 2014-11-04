@@ -14,5 +14,3 @@
   (interactive "Ddirectory:")
   (grep (concat "grep -nH -I -r -E \"[\\#\\/\\-\\;\\*]\s*TODO|FIXME|BUG|WARNING:?\" " dir " 2>/dev/null"))
   (enlarge-winqdow 7))
-
-(provide 'init-functions)

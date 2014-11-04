@@ -25,7 +25,3 @@
 
 ;; Find file
 ;; (cabbage-global-set-key (kbd "M-t") 'find-file-in-project)
-
-
-
-(provide 'init-bindings)
