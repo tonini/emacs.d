@@ -1,4 +1,3 @@
-;; no blinking cursor
 (if (fboundp 'blink-cursor-mode)
     (blink-cursor-mode 0))
 
@@ -16,7 +15,3 @@
 
 (set-face-attribute 'mode-line nil :height 130)
 (set-face-attribute 'mode-line-inactive nil  :height 130)
-;; (set-face-attribute 'mode-line nil  :background "Orange")
-;; (set-face-attribute 'region nil :background "#525d60")
-;; (set-face-foreground 'hl-line "#000000")
-;; (set-cursor-color "#eeeeee")
