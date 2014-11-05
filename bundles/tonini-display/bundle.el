@@ -11,7 +11,4 @@
 (set-frame-parameter nil 'fullscreen 'fullboth)
 (setq default-cursor-type 'box)
 
-(load (expand-file-name "~/.emacs.d/themes/github.el"))
-
-(set-face-attribute 'mode-line nil :height 130)
-(set-face-attribute 'mode-line-inactive nil  :height 130)
+(load (expand-file-name "~/.emacs.d/themes/tonini.el"))
