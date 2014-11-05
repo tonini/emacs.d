@@ -15,3 +15,9 @@
 
 ;; Popwin
 (cabbage-global-set-key (kbd "C-z") popwin:keymap)
+
+;; Personal Prefix M-s "Master - Sam" ;-)
+(define-prefix-command 's-map)
+(global-set-key (kbd "M-s") 's-map)
+
+(cabbage-global-set-key (kbd "M-s g") 'rgrep)
