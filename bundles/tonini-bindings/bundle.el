@@ -1,4 +1,4 @@
-;; compiling
+
 (cabbage-global-set-key (kbd "C-c c") 'mode-compile)
 (cabbage-global-set-key (kbd "C-c k") 'mode-compile-kill)
 ;; ruby compilation
@@ -8,7 +8,7 @@
 (cabbage-global-set-key (kbd "C-x M-k") 'kill-this-buffer)
 
 ;; ace jump mode
-(cabbage-global-set-key (kbd "M-,") 'yas/expand)
+;; (cabbage-global-set-key (kbd "M-,") 'yas/expand)
 
 ;; dirtree
 (cabbage-global-set-key (kbd "C-x t") 'dired-other-window)
@@ -18,6 +18,6 @@
 
 ;; Personal Prefix M-s "Master - Sam" ;-)
 (define-prefix-command 's-map)
-(global-set-key (kbd "M-s") 's-map)
+(global-set-key (kbd "M-,") 's-map)
 
-(cabbage-global-set-key (kbd "M-s g") 'rgrep)
+(cabbage-global-set-key (kbd "M-, g") 'rgrep)
