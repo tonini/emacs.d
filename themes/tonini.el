@@ -131,7 +131,12 @@
  '(org-level-3 ((t (:foreground "#A6E22E"))))
  '(org-level-4 ((t (:foreground "#AE81FF"))))
  '(org-level-5 ((t (:foreground "#E6DB74"))))
- '(org-level-6 ((t (:foreground "#66D9EF")))))
+ '(org-level-6 ((t (:foreground "#66D9EF"))))
+ `(company-tooltip ((t (:inherit default :background "#000000"))))
+ `(company-scrollbar-bg ((t (:background "#FFFFFF"))))
+ `(company-scrollbar-fg ((t (:background "darkgray"))))
+ `(company-tooltip-selection ((t (:background "lightgray" :foreground "#000000"))))
+ `(company-tooltip-common ((t (:inherit font-lock-constant-face)))))
 
 ;;;###autoload
 (when load-file-name
