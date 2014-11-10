@@ -1,10 +1,11 @@
-;;; rubytapas-theme.el --- rubytapas theme with Emacs theme engine
+;;; tonini-theme.el --- tonini theme with Emacs theme engine
 
 ;; Copyright (C) 2013 by Adam Lloyd
 ;; Copyright (C) 2013 by Syohei YOSHIDA
 ;; Copyright (C) 2013 by Avdi Grimm
+;; Copyright (C) 2014 by Samuel Tonini
 
-;; Author: Avdi Grimm <avdi@avdi.org>
+;; Author: Samuel Tonini <tonini.samuel@gmail.com>
 ;; URL:
 ;; Version:
 ;; X-Original-Version: 0.01
@@ -24,20 +25,19 @@
 
 ;;; Commentary:
 
-;; This is a trivially modified version of the "Molokai" color theme.
+;; This is a trivially modified version of the "rubytapas" color theme.
 ;; It increases the contrast of comments for better visibility.
 
 ;;; Code:
 
-(deftheme rubytapas
-  "rubytapas theme")
+(deftheme tonini
+  "tonini theme")
 
 (custom-theme-set-faces
- 'rubytapas
+ 'tonini
 
  '(default ((t (:background "#1B1D1E" :foreground "#F8F8F2"))))
  '(cursor ((t (:foregound "#F8F8F0"))))
-
  '(bold ((t (:weight bold))))
  '(bold-italic ((t (:weight bold :slant italic))))
  '(custom-face-tag ((t (:foreground "#66D9EF" :weight bold))))
@@ -57,10 +57,9 @@
  '(diff-removed ((t (:foreground "#F92672" :weight bold))))
  '(escape-glyph ((t (:foreground "#E6DB74"))))
  '(minibuffer-prompt ((t (:foreground "#66D9EF"))))
- '(mode-line ((t (:foreground "#000000" :background "#F8F8F0" :box (:line-width 1 :color "#000000" :style released-button) :height 1.05))))
  '(mode-line-buffer-id ((t (:foreground "#FF0000" :weight semi-bold))))
- '(mode-line-inactive ((t (:foreground "#BCBCBC" :background "#000000" :height 1.05
-                           ':box (:line-width 1 :color "#232526")))))
+ '(mode-line-inactive ((t (:foreground "#BCBCBC" :background "#000000" :height 1.05 ':box (:line-width 1 :color "#232526")))))
+ '(mode-line ((t (:foreground "#000000" :background "#F8F8F0"  :height 1.05 ':box (:line-width 1 :color "#000000" :style released-button)))))
  '(mode-line-mousable ((t (:foreground "#BCBCBC" :background "#000000"))))
  '(mode-line-mousable-minor-mode ((t (:foreground "#BCBCBC" :background "#000000"))))
  '(font-lock-builtin-face ((t (:foreground "#A6E22E"))))
@@ -139,6 +138,6 @@
   (add-to-list 'custom-theme-load-path
                (file-name-as-directory (file-name-directory load-file-name))))
 
-(provide-theme 'rubytapas)
+(provide-theme 'tonini)
 
-;;; rubytapas-theme.el ends here
+;;; tonini-theme.el ends here
