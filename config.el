@@ -13,21 +13,14 @@
                         markdown
                         power-edit
                         project
-                        python
-                        php
                         ruby
                         haml-and-sass
                         yaml
                         cabbage-developer
                         org
                         rails
-                        rect-mark
                         snippets
                         github
-                        slim
-                        mustache
-                        dirtree
-                        ag
                         rvm
                         tonini-elixir
                         tonini-ido-mode
@@ -36,7 +29,8 @@
                         tonini-popwin
                         tonini-display
                         tonini-bindings
+                        tonini-js
+                        tonini-pbcopy
                         coffee-script
-                        floobits
                         karma
                         ))

@@ -22,6 +22,7 @@
                '("marmalade" . "http://marmalade-repo.org/packages/"))
   (package-initialize)
 
-  (setq custom-enabled-themes '(tonini-theme)))
+  (setq custom-enabled-themes '(tonini-theme))
+  )
 
 (add-hook 'cabbage-pre-bundle-hook 'tonini-pre-bundle-hook)

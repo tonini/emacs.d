@@ -1,9 +1,8 @@
 (cabbage-global-set-key (kbd "C-c c") 'mode-compile)
-(cabbage-global-set-key (kbd "C-c k") 'mode-compile-kill)
 (cabbage-global-set-key (kbd "C-x M-r") 'ruby-compilation-this-buffer)
 (cabbage-global-set-key (kbd "C-x M-k") 'kill-this-buffer)
 (cabbage-global-set-key (kbd "C-x t") 'dired-other-window)
-(cabbage-global-set-key (kbd "C-z") popwin:keymap)
+(cabbage-global-set-key (kbd "C-y") popwin:keymap)
 
 ;; Help
 
