@@ -14,6 +14,7 @@
  '(ido-ignore-directories
    (quote
     ("\\`CVS/" "\\`\\.\\./" "\\`\\./" "\\`node_modules\\'" "\\`tmp\\'" "\\`vendor\\'")))
+ '(js2-basic-offset 2)
  '(ns-pop-up-frames nil)
  '(org-clock-out-when-done nil)
  '(org-clock-persist t)
