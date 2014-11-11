@@ -1,4 +1,3 @@
-
 (cabbage-global-set-key (kbd "C-c c") 'mode-compile)
 (cabbage-global-set-key (kbd "C-c k") 'mode-compile-kill)
 (cabbage-global-set-key (kbd "C-x M-r") 'ruby-compilation-this-buffer)
