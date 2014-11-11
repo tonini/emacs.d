@@ -16,6 +16,7 @@
 (defvar mode-line-cleaner-alist
   `((auto-complete-mode . " α")
     (eldoc-mode . "")
+    (company-mode . "")
     (ruby-tools-mode . "")
     (rinari-minor-mode . "")
     (remove-trailing-whitespace-mode . "")
