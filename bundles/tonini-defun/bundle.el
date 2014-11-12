@@ -22,11 +22,18 @@
                      (shell-quote-argument search)
                      " `git rev-parse --show-toplevel`")))
 
-;; (defun paste-to-osx (text &optional push)
-;;   (let ((process-connection-type nil))
-;;     (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
-;;       (process-send-string proc text)
-;;       (process-send-eof proc))))
+(require 'url)
 
-;; (setq interprogram-cut-function 'paste-to-osx)
-;; (setq interprogram-paste-function 'copy-from-osx)
+(defun tonini-fetch-snippet (url)
+  (interactive "MSnippet URL: ")
+  (let ((download-buffer (url-retrieve-synchronously url))
+        (download-dir (read-directory-name "Enter snippet directory: " "~/.emacs.d/snippets/")))
+    (save-excursion
+      (set-buffer download-buffer)
+      (goto-char (point-min))
+      (re-search-forward "^$" nil 'move)
+      (forward-char)
+      (delete-region (point-min) (point))
+      (write-file (concat download-dir
+                          (car (last (split-string url "/" t)))))))
+  (yas/reload-all))
