@@ -15,8 +15,12 @@
   (grep (concat "grep -nH -I -r -E \"[\\#\\/\\-\\;\\*]\s*TODO|FIXME|BUG|WARNING:?\" " dir " 2>/dev/null"))
   (enlarge-winqdow 7))
 
-;; (defun copy-from-osx ()
-;;   (shell-command-to-string "pbpaste"))
+(defun tonini-git-grep (search)
+  "git-grep the entire current repo"
+  (interactive (list (tonini-git-grep-prompt)))
+  (grep-find (concat "git --no-pager grep -P -n "
+                     (shell-quote-argument search)
+                     " `git rev-parse --show-toplevel`")))
 
 ;; (defun paste-to-osx (text &optional push)
 ;;   (let ((process-connection-type nil))
