@@ -22,15 +22,13 @@
                         snippets
                         github
                         rvm
+                        coffee-script
                         tonini-elixir
                         tonini-ido-mode
                         tonini-popwin
-                        tonini-karma
                         tonini-popwin
                         tonini-display
                         tonini-bindings
                         tonini-js
                         tonini-pbcopy
-                        coffee-script
-                        karma
                         ))
