@@ -8,12 +8,11 @@ Cabbage fundamental organization are bundles. You can enable and disable the con
 
 ## My Bundles
 
-* `tonini-popwin`
-* `tonini-display`
-* `tonini-ido-mode`
-* `tonini-elixir`
-* `tonini-karma`
-* `tonini-bindings`
-* `tonini-js`
-* `tonini-defun`
-* `tonini-pbcopy`
+* [`tonini-popwin`](bundles/tonini-popwin/bundle.el)
+* [`tonini-display`](bundles/tonini-display/bundle.el)
+* [`tonini-ido-mode`](bundles/tonini-ido-mode/bundle.el)
+* [`tonini-elixir`](bundles/tonini-elixir/bundle.el)
+* [`tonini-js`](bundles/tonini-js/bundle.el)
+* [`tonini-defun`](bundles/tonini-defun/bundle.el)
+* [`tonini-pbcopy`](bundles/tonini-pbcopy/bundle.el)
+* [`tonini-bindings`](bundles/tonini-bindings/bundle.el)
