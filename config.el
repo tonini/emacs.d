@@ -23,6 +23,7 @@
                         github
                         rvm
                         coffee-script
+                        tonini-system
                         tonini-elixir
                         tonini-ido-mode
                         tonini-popwin
