@@ -30,7 +30,8 @@
 (cabbage-global-set-key (kbd "C-c e r") 'eval-region)
 (cabbage-global-set-key (kbd "C-c e l") 'eval-last-sexp)
 
-;;
+;; Personal mapping
+
 (defvar tonini-map)
 (define-prefix-command 'tonini-map)
 
