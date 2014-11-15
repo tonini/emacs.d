@@ -15,17 +15,10 @@
   (grep (concat "grep -nH -I -r -E \"[\\#\\/\\-\\;\\*]\s*TODO|FIXME|BUG|WARNING:?\" " dir " 2>/dev/null"))
   (enlarge-winqdow 7))
 
-(defun tonini-git-grep (search)
-  "git-grep the entire current repo"
-  (interactive (list (tonini-git-grep-prompt)))
-  (grep-find (concat "git --no-pager grep -P -n "
-                     (shell-quote-argument search)
-                     " `git rev-parse --show-toplevel`")))
-
 (require 'url)
 
 (defun tonini-fetch-snippet (url)
-  (interactive "MSnippet URL: ")
+  (interactive "MEnter snippet URL: ")
   (let ((download-buffer (url-retrieve-synchronously url))
         (download-dir (read-directory-name "Enter snippet directory: " "~/.emacs.d/snippets/")))
     (save-excursion

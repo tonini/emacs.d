@@ -29,3 +29,12 @@
 (cabbage-global-set-key (kbd "C-c e b") 'eval-buffer)
 (cabbage-global-set-key (kbd "C-c e r") 'eval-region)
 (cabbage-global-set-key (kbd "C-c e l") 'eval-last-sexp)
+
+;;
+(defvar tonini-map)
+(define-prefix-command 'tonini-map)
+
+(cabbage-global-set-key (kbd "C-c ;") 'tonini-map)
+(cabbage-global-set-key (kbd "C-c ; g") 'magit-grep)
+(cabbage-global-set-key (kbd "C-c ; t") 'tonini-rgrep-todos-in-dir)
+(cabbage-global-set-key (kbd "C-c ; f") 'tonini-fetch-snippet)
