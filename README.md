@@ -15,4 +15,5 @@ Cabbage fundamental organization are bundles. You can enable and disable the con
 * [`tonini-js`](bundles/tonini-js/bundle.el)
 * [`tonini-defun`](bundles/tonini-defun/bundle.el)
 * [`tonini-pbcopy`](bundles/tonini-pbcopy/bundle.el)
+* [`tonini-elisp`](bundles/tonini-elisp/bundle.el)
 * [`tonini-bindings`](bundles/tonini-bindings/bundle.el)
