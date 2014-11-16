@@ -18,3 +18,6 @@
 ;; I have a modern machine ;)
 ;;
 (setq gc-cons-threshold 20000000)
+
+(setq delete-old-versions t)
+(setq auto-save-default nil)

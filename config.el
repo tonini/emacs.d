@@ -32,4 +32,5 @@
                         tonini-bindings
                         tonini-js
                         tonini-pbcopy
+                        tonini-elisp
                         ))
