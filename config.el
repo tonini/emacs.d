@@ -27,10 +27,10 @@
                         tonini-elixir
                         tonini-ido-mode
                         tonini-popwin
-                        tonini-popwin
                         tonini-display
                         tonini-bindings
                         tonini-js
                         tonini-pbcopy
                         tonini-elisp
+                        tonini-defun
                         ))
