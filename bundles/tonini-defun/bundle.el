@@ -34,8 +34,8 @@
 (defun tonini-project-ido-find-project ()
   (interactive)
   (let* ((project-name (ido-completing-read "Project: "
-                                           (directory-files cabbage-project-location nil "^[^.]")))
-        (project-path (file-name-directory (concat cabbage-project-location project-name))))
+                                            (directory-files cabbage-project-location nil "^[^.]")))
+         (project-path (concat cabbage-project-location project-name)))
     (cabbage-persp project-name)
-    (let ((default-directory (concat cabbage-project-location project-name)))
-      (find-file (cabbage-ido-open-find-directory-files default-directory)))))
+    (let ((default-directory project-path))
+      (textmate-goto-file))))
