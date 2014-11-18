@@ -30,3 +30,12 @@
       (write-file (concat download-dir
                           (car (last (split-string url "/" t)))))))
   (yas/reload-all))
+
+(defun tonini-project-ido-find-project ()
+  (interactive)
+  (let* ((project-name (ido-completing-read "Project: "
+                                           (directory-files cabbage-project-location nil "^[^.]")))
+        (project-path (file-name-directory (concat cabbage-project-location project-name))))
+    (cabbage-persp project-name)
+    (let ((default-directory (concat cabbage-project-location project-name)))
+      (find-file (cabbage-ido-open-find-directory-files default-directory)))))

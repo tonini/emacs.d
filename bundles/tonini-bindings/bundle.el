@@ -39,3 +39,5 @@
 (cabbage-global-set-key (kbd "C-c ; g") 'magit-grep)
 (cabbage-global-set-key (kbd "C-c ; t") 'tonini-rgrep-todos-in-dir)
 (cabbage-global-set-key (kbd "C-c ; f") 'tonini-fetch-snippet)
+
+(cabbage-global-set-key (kbd "C-x p") 'tonini-project-ido-find-project)
