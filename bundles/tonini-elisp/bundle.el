@@ -4,5 +4,5 @@
 (when (not (string-match "backup" *textmate-gf-exclude*))
   (setq *textmate-gf-exclude*
         (replace-regexp-in-string "tmp"
-                                  "tmp|backup|elpa"
+                                  "tmp|backup|elpa|\.cask"
                                   *textmate-gf-exclude*)))
