@@ -41,3 +41,4 @@
 (cabbage-global-set-key (kbd "C-c ; f") 'tonini-fetch-snippet)
 
 (cabbage-global-set-key (kbd "C-x p") 'tonini-project-ido-find-project)
+(cabbage-global-set-key (kbd "C-_") 'cabbage-complete)
