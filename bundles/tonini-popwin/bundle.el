@@ -11,3 +11,4 @@
 (push "*Kill Ring*" popwin:special-display-config)
 (push '(grep-mode :noselect t :stick t) popwin:special-display-config)
 (push '("*compilation*" :noselect t :stick t) popwin:special-display-config)
+(push '("*mix*" :noselect t :stick t) popwin:special-display-config)
