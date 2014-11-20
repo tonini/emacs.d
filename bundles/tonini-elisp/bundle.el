@@ -5,4 +5,6 @@
   (setq *textmate-gf-exclude*
         (replace-regexp-in-string "tmp"
                                   "tmp|backup|elpa|\.cask"
-                                  *textmate-gf-exclude*)))
+                                  *textmate-gf-exclude*))
+  (setq *textmate-project-roots*
+        (append *textmate-project-roots* '("Cask" ".cask"))))
