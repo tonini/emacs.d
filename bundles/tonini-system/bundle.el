@@ -21,3 +21,5 @@
 
 (setq delete-old-versions t)
 (setq auto-save-default nil)
+
+ (setq ring-bell-function 'ignore)
