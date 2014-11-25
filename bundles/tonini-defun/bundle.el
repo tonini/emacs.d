@@ -31,6 +31,19 @@
                           (car (last (split-string url "/" t)))))))
   (yas/reload-all))
 
+(defun tonini-fetch-file (url)
+  (interactive "MEnter URL: ")
+  (let ((download-buffer (url-retrieve-synchronously url))
+        (download-dir (read-directory-name "Enter download directory: " "~/Downloads/")))
+    (save-excursion
+      (set-buffer download-buffer)
+      (goto-char (point-min))
+      (re-search-forward "^$" nil 'move)
+      (forward-char)
+      (delete-region (point-min) (point))
+      (write-file (concat download-dir
+                          (car (last (split-string url "/" t))))))))
+
 (defun tonini-project-ido-find-project ()
   (interactive)
   (let* ((project-name (ido-completing-read "Project: "
