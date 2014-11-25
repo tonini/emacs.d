@@ -20,5 +20,10 @@
     (compile "make test")
     (cd old-directory)))
 
+(defun tonini-run-ert-tests ()
+  (interactive)
+  (add-to-list 'load-path (concat (cabbage-project-root) "test/"))
+  (ert t))
+
 (dolist (hook '(emacs-lisp-mode-hook ielm-mode-hook))
   (add-hook hook 'turn-on-elisp-slime-nav-mode))
