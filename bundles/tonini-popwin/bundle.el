@@ -10,5 +10,6 @@
 (push '(dired-mode :position top :stick t) popwin:special-display-config)
 (push "*Kill Ring*" popwin:special-display-config)
 (push '(grep-mode :noselect t :stick t) popwin:special-display-config)
+(push '("*elixir help*" :noselect t :stick t) popwin:special-display-config)
 (push '("*compilation*" :noselect t :stick t) popwin:special-display-config)
 (push '("*mix*" :noselect t :stick t) popwin:special-display-config)
