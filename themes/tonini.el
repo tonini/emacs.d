@@ -36,7 +36,7 @@
 (custom-theme-set-faces
  'tonini
 
- '(default ((t (:background "#151617" :foreground "#F8F8F2"))))
+ '(default ((t (:background "#000000" :foreground "#F8F8F2"))))
  '(cursor ((t (:foregound "#F8F8F0"))))
  '(bold ((t (:weight bold))))
  '(bold-italic ((t (:weight bold :slant italic))))
