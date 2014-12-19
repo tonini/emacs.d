@@ -25,8 +25,7 @@
 
 ;;; Commentary:
 
-;; This is a trivially modified version of the "rubytapas" color theme.
-;; It increases the contrast of comments for better visibility.
+;; This is a modified version of the "rubytapas" color theme.
 
 ;;; Code:
 
