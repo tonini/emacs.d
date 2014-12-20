@@ -19,7 +19,7 @@
 (add-hook 'elixir-mode-hook 'cabbage-elixir-mode-hook)
 
 (defun cabbage-elixir-mode-hook ()
-  (cabbage--set-pairs '("(" "{" "[" "\"" "\'" "|"))
+  (cabbage--set-pairs '("(" "{" "[" "\"" "\'"))
 
   (when (and buffer-file-name (string-match "_test.exs$" buffer-file-name))
     (setq cabbage-testing-execute-function 'alchemist-mix-test-file)))
