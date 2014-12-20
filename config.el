@@ -2,12 +2,11 @@
                         accessibility
                         completion
                         css
-                        cucumber
-                        diff
                         ergonomic
                         erlang
                         git
                         html
+                        diff
                         javascript
                         lisp
                         markdown
@@ -18,7 +17,6 @@
                         yaml
                         cabbage-developer
                         org
-                        rails
                         snippets
                         github
                         rvm
@@ -28,9 +26,10 @@
                         tonini-ido-mode
                         tonini-popwin
                         tonini-display
-                        tonini-bindings
                         tonini-js
                         tonini-pbcopy
                         tonini-elisp
                         tonini-defun
+                        tonini-org
+                        tonini-bindings
                         ))
