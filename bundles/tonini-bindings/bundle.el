@@ -1,4 +1,6 @@
-(cabbage-global-set-key (kbd "C-c c") 'mode-compile)
+(key-chord-mode 1)
+
+(cabbage-global-set-key (kbd "C-c c") 'org-capture)
 (cabbage-global-set-key (kbd "C-x M-r") 'ruby-compilation-this-buffer)
 (cabbage-global-set-key (kbd "C-x M-k") 'kill-this-buffer)
 (cabbage-global-set-key (kbd "C-x t") 'dired-other-window)
@@ -32,14 +34,10 @@
 
 ;; Personal mapping
 
-(defvar tonini-map)
-(define-prefix-command 'tonini-map)
-
-(cabbage-global-set-key (kbd "C-c ;") 'tonini-map)
-(cabbage-global-set-key (kbd "C-c ; g") 'magit-grep)
-(cabbage-global-set-key (kbd "C-c ; t") 'tonini-rgrep-todos-in-dir)
-(cabbage-global-set-key (kbd "C-c ; f") 'tonini-fetch-snippet)
-(cabbage-global-set-key (kbd "C-c ; e") 'tonini-make-test)
+(key-chord-define-global "gg" 'magit-grep)
+(key-chord-define-global "ff" 'tonini-fetch-snippet)
+(key-chord-define-global "ee" 'tonini-run-ert-tests)
+(key-chord-define-global "mt" 'tonini-make-test)
 
 (cabbage-global-set-key (kbd "C-x p") 'tonini-project-ido-find-project)
 (cabbage-global-set-key (kbd "C-_") 'cabbage-complete)
