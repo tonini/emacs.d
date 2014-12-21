@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: ert-deftest
-# key: ert
-# --
-(ert-deftest ${1:test-function} ()
-  "${2:}"
-  $0)
