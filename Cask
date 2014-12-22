@@ -36,5 +36,3 @@
 (depends-on "rainbow-delimiters")
 (depends-on "markdown-mode")
 (depends-on "elisp-slime-nav")
-(depends-on "elixir-mode" :git "https://github.com/elixir-lang/emacs-elixir.git")
-(depends-on "alchemist" :git "https://github.com/tonini/alchemist.el.git")
