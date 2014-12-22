@@ -1,3 +1,5 @@
+(add-to-list 'auto-mode-alist '("Cask" . emacs-lisp-mode))
+
 ;; add additional files / directories to execlude from textmate-goto-file
 (when (not (string-match "backup" *textmate-gf-exclude*))
   (setq *textmate-gf-exclude*
