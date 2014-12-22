@@ -1,3 +1,10 @@
+;;; init.el --- Personal emacs configuration of Samuel Tonini
+
+;;; Commentary:
+;; 
+
+;;; Code:
+
 (require 'cask "~/.cask/cask.el")
 
 (cask-initialize)
@@ -16,3 +23,7 @@
 (require 'elixir-prt)
 (require 'emacs-lisp-prt)
 (require 'keybindings-prt)
+
+(provide 'init)
+
+;;; init.el ends here
