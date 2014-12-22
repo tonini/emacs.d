@@ -11,6 +11,7 @@
   (turn-on-eldoc-mode)
   (rainbow-delimiters-mode +1)
   (rainbow-mode +1)
+  (flycheck-mode +1)
   (setq mode-name "EL"))
 
 (add-hook 'emacs-lisp-mode-hook  't-emacs-lisp-mode-hook)
