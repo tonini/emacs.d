@@ -36,3 +36,4 @@
 (depends-on "rainbow-delimiters")
 (depends-on "markdown-mode")
 (depends-on "elisp-slime-nav")
+(depends-on "yasnippet")
