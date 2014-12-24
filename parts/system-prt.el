@@ -1,3 +1,5 @@
+(server-start)
+
 ;; write a PID file for the emacs-server
 (setq pidfile "~/.emacsserver.pid")
 
