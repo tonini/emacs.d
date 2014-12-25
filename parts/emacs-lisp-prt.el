@@ -1,3 +1,10 @@
+;;; emacs-lisp-prt.el --- Elixir setup
+
+;;; Commentary:
+;; 
+
+;;; Code:
+
 (add-to-list 'auto-mode-alist '("Cask" . emacs-lisp-mode))
 
 ;; add additional files / directories to execlude from textmate-goto-file
@@ -22,3 +29,5 @@
   (add-hook hook 'turn-on-elisp-slime-nav-mode))
 
 (provide 'emacs-lisp-prt)
+
+;;; emacs-lisp-prt.el ends here

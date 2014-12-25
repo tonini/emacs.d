@@ -1,3 +1,11 @@
+;;; display-prt.el --- Display setup
+
+;;; Commentary:
+;; 
+
+;;; Code:
+
+
 (require 'cl)
 (require 'idle-highlight-mode)
 
@@ -66,3 +74,5 @@ want to use in the modeline *in lieu of* the original.")
 (global-linum-mode t)
 
 (provide 'display-prt)
+
+;;; display-prt.el ends here

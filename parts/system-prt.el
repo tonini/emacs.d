@@ -1,3 +1,10 @@
+;;; system-prt.el --- System setup
+
+;;; Commentary:
+;; 
+
+;;; Code:
+
 (server-start)
 
 ;; write a PID file for the emacs-server
@@ -40,3 +47,5 @@
 (setq interprogram-paste-function 'copy-from-osx)
 
 (provide 'system-prt)
+
+;;; system-prt.el ends here

@@ -1,3 +1,10 @@
+;;; ido-prt.el --- Ido setup
+
+;;; Commentary:
+;; 
+
+;;; Code:
+
 (setq gc-cons-threshold 20000000)
 
 (ido-mode 1)
@@ -18,3 +25,5 @@
 (setq *textmate-gf-exclude* "(/|^)(\\.+[^/]+|public|node_modules|vendor|fixtures|tmp|log|classes|build)($|/)|(\\.xcodeproj|\\.nib|\\.framework|\\.app|\\.pbproj|\\.pbxproj|\\.xcode|\\.xcodeproj|\\.bundle|\\.pyc)(/|$)")
 
 (provide 'ido-prt)
+
+;;; ido-prt.el ends here

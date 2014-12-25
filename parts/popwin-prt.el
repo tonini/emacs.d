@@ -1,3 +1,10 @@
+;;; popwin-prt.el --- Popwin setup
+
+;;; Commentary:
+;; 
+
+;;; Code:
+
 (popwin-mode 1)
 
 (defun popwin-bkr:update-window-reference ()
@@ -12,3 +19,7 @@
 (push '("*elixir help*" :noselect t :stick t) popwin:special-display-config)
 (push '("*compilation*" :noselect t :stick t) popwin:special-display-config)
 (push '("*mix*" :noselect t :stick t) popwin:special-display-config)
+
+(provide 'popwin-prt)
+
+;;; popwin-prt.el ends here
