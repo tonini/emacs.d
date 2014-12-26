@@ -179,9 +179,6 @@
 (global-set-key (kbd "C-c e l") 'eval-last-sexp)
 
 (key-chord-define-global "gg" 'magit-grep)
-;; (key-chord-define-global "ff" 'tonini-fetch-snippet)
-(key-chord-define-global "ee" 'tonini-run-ert-tests)
-(key-chord-define-global "mt" 'tonini-make-test)
 (key-chord-define-global "cc" 't-comment-or-uncomment-region-or-line)
 
 (global-set-key (kbd "C-x p") 't-project-ido-find-project)
