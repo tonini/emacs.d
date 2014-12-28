@@ -5,6 +5,15 @@
 
 ;;; Code:
 
+(setq-default indent-tabs-mode nil)
+
+;; delete the selection with a keypress
+(delete-selection-mode t)
+
+;; revert buffers automatically when underlying files are changed
+(global-auto-revert-mode t)
+
+;; Allow this Emacs process to be a server for client processes.
 (server-start)
 
 ;; write a PID file for the emacs-server

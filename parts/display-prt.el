@@ -10,7 +10,6 @@
 (require 'idle-highlight-mode)
 
 (setq visible-bell nil)
-(delete-selection-mode 1)
 (transient-mark-mode 1)
 (show-paren-mode 1)
 (idle-highlight-mode 1)
