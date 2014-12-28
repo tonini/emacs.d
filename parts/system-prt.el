@@ -13,6 +13,9 @@
 ;; revert buffers automatically when underlying files are changed
 (global-auto-revert-mode t)
 
+;; enable y/n answers
+(fset 'yes-or-no-p 'y-or-n-p)
+
 ;; Allow this Emacs process to be a server for client processes.
 (server-start)
 
