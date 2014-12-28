@@ -1,6 +1,7 @@
 (source gnu)
 (source melpa)
 
+(depends-on "ert-runner")
 (depends-on "cask")
 (depends-on "company")
 (depends-on "dash")
@@ -37,3 +38,4 @@
 (depends-on "markdown-mode")
 (depends-on "elisp-slime-nav")
 (depends-on "yasnippet")
+(depends-on "powerline")
