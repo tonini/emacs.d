@@ -5,7 +5,7 @@
 
 ;;; Code:
 
-(smartparens-mode +1)
+(smartparens-global-mode +1)
 
 (provide 'programming-prt)
 
