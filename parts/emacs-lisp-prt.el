@@ -23,6 +23,10 @@
   (flycheck-mode +1)
   (setq mode-name "EL"))
 
+;; disable checkdoc for emacs lisp, it's no annoying
+(with-eval-after-load 'flycheck
+  (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc)))
+
 (add-hook 'emacs-lisp-mode-hook  't-emacs-lisp-mode-hook)
 
 (dolist (hook '(emacs-lisp-mode-hook ielm-mode-hook))
