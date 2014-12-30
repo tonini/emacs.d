@@ -5,6 +5,11 @@
 
 ;;; Code:
 
+(add-to-list 'load-path "~/Projects/overseer.el/")
+(require 'overseer)
+
+(add-hook 'emacs-lisp-mode-hook 'overseer-mode-hook)
+
 (add-to-list 'auto-mode-alist '("Cask" . emacs-lisp-mode))
 
 ;; add additional files / directories to execlude from textmate-goto-file
