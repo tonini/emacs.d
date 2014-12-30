@@ -39,3 +39,5 @@
 (depends-on "elisp-slime-nav")
 (depends-on "yasnippet")
 (depends-on "powerline")
+(depends-on "marmalade-client")
+
