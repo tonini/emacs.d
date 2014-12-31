@@ -72,8 +72,6 @@ want to use in the modeline *in lieu of* the original.")
 (setq linum-format " ")
 (global-linum-mode t)
 
-(powerline-default-theme)
-
 (provide 'display-prt)
 
 ;;; display-prt.el ends here
