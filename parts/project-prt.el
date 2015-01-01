@@ -1,7 +1,11 @@
 (provide 'project-prt)
-
+(require 'projectile)
 (require 'perspective)
 (require 'textmate)
+(require 'persp-projectile)
+
+(projectile-global-mode)
+(persp-mode)
 
 (defvar t-project-location (expand-file-name "~/Projects/"))
 

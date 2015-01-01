@@ -39,4 +39,6 @@
 (depends-on "elisp-slime-nav")
 (depends-on "yasnippet")
 (depends-on "marmalade-client")
+(depends-on "projectile")
+(depends-on "persp-projectile")
 

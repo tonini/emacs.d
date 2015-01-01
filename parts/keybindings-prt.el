@@ -140,7 +140,7 @@
 (global-set-key (kbd "C--") 'decrease-font-size)
 (global-set-key (kbd "C-c C-w") 'whitespace-mode)
 
-(global-set-key (kbd "M-t") 'textmate-goto-file)
+(global-set-key (kbd "M-t") 'projectile-find-file)
 (global-set-key (kbd "M-w") 'textmate-goto-symbol)
 
 (global-set-key (kbd "C-x g") 'magit-status)
@@ -181,12 +181,15 @@
 (key-chord-define-global "gg" 'magit-grep)
 (key-chord-define-global "cc" 't-comment-or-uncomment-region-or-line)
 
-(global-set-key (kbd "C-x p") 't-project-ido-find-project)
+(global-set-key (kbd "C-x p") 'projectile-persp-switch-project)
 (global-set-key (kbd "C-p s") 'persp-switch)
 (global-set-key (kbd "C-p p") 't-persp-last)
 (global-set-key (kbd "C-p d") 'persp-kill)
 (global-set-key (kbd "C-p x") 'persp-kill)
 (global-set-key (kbd "C-_") 'company-complete)
+
+(global-set-key (kbd "C-x b") 'projectile-switch-to-buffer)
+(global-set-key (kbd "C-x C-b") 'projectile-ibuffer)
 
 (provide 'keybindings-prt)
 
