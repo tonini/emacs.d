@@ -1,8 +1,11 @@
+(add-to-list 'load-path "~/Projects/tester.el/")
+
 (provide 'project-prt)
 (require 'projectile)
 (require 'perspective)
 (require 'textmate)
 (require 'persp-projectile)
+(require 'tester)
 
 (projectile-global-mode)
 (persp-mode)
