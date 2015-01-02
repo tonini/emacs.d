@@ -5,6 +5,9 @@
 
 ;;; Code:
 
+;; Use bin/bash as default shell for Emacs to work around PATH issues with zsh
+(setq shell-file-name "/bin/bash")
+
 (setq-default indent-tabs-mode nil)
 
 ;; delete the selection with a keypress
