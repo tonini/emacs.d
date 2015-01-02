@@ -26,7 +26,9 @@
   (rainbow-delimiters-mode +1)
   (rainbow-mode +1)
   (flycheck-mode +1)
-  (setq mode-name "EL"))
+  (setq mode-name "EL")
+  (tester-init-test-run #'overseer-test-file "test.el$")
+  (tester-init-test-suite-run #'overseer-test))
 
 ;; disable checkdoc for emacs lisp, it's no annoying
 (with-eval-after-load 'flycheck
