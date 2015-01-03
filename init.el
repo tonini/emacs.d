@@ -1,7 +1,7 @@
 ;;; init.el --- Personal emacs configuration of Samuel Tonini
 
 ;;; Commentary:
-;; 
+;;
 
 ;;; Code:
 
@@ -23,7 +23,9 @@
 (require 'elixir-prt)
 (require 'emacs-lisp-prt)
 (require 'yasnippet-prt)
+(require 'guide-key-prt)
 (require 'utils-prt)
+(require 'popwin-prt)
 (require 'keybindings-prt)
 
 (provide 'init)

@@ -1,7 +1,7 @@
 ;;; keybindings-prt.el --- Keybinding setup
 
 ;;; Commentary:
-;; 
+;;
 
 ;;; Code:
 
@@ -190,6 +190,20 @@
 
 (global-set-key (kbd "C-x b") 'projectile-switch-to-buffer)
 (global-set-key (kbd "C-x C-b") 'projectile-ibuffer)
+
+;; Test bindings
+
+(defvar testing-map)
+(define-prefix-command 'testing-map)
+
+(global-unset-key (kbd "M-e"))
+(global-set-key (kbd "M-e") 'testing-map)
+
+(global-set-key (kbd "M-e e") 'tester-run-test-file)
+(global-set-key (kbd "M-e s") 'tester-run-test-suite)
+
+;; Popwin
+(global-set-key (kbd "C-y") popwin:keymap)
 
 (provide 'keybindings-prt)
 
