@@ -1,7 +1,7 @@
 ;;; emacs-lisp-prt.el --- Elixir setup
 
 ;;; Commentary:
-;; 
+;;
 
 ;;; Code:
 

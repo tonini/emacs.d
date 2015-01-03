@@ -1,7 +1,7 @@
 ;;; display-prt.el --- Display setup
 
 ;;; Commentary:
-;; 
+;;
 
 ;;; Code:
 
@@ -37,7 +37,16 @@
 (defvar mode-line-cleaner-alist
   `((auto-complete-mode . " α")
     (eldoc-mode . "")
+    (rainbow-mode . "")
+    (overseer-mode . "")
+    (alchemist-mode . "")
+    (guide-key-mode . "")
+    (elisp-slime-nav-mode . "")
+    (rainbow-mode . "")
     (company-mode . "")
+    (yas/minor-mode . "")
+    (projectile-mode . "")
+    (flycheck-mode . "")
     (ruby-tools-mode . "")
     (rinari-minor-mode . "")
     (remove-trailing-whitespace-mode . "")
