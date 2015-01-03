@@ -43,3 +43,4 @@
 (depends-on "persp-projectile")
 (depends-on "rspec-mode")
 (depends-on "rvm")
+(depends-on "guide-key")
