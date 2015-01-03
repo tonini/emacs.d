@@ -61,6 +61,8 @@
 (setq interprogram-cut-function 'paste-to-osx)
 (setq interprogram-paste-function 'copy-from-osx)
 
+(add-hook 'before-save-hook 'whitespace-cleanup)
+
 (provide 'system-prt)
 
 ;;; system-prt.el ends here
