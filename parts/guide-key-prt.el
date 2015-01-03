@@ -7,12 +7,12 @@
 
 (require 'guide-key)
 
-(setq guide-key/guide-key-sequence '("C-c p"))
 (guide-key-mode 1)
 
 (setq guide-key/idle-delay 0.7)
 
 (setq guide-key/highlight-command-regexp "projectile")
+(setq guide-key/guide-key-sequence '("C-c p"))
 
 (defun setup-for-alchemist-mode ()
   (guide-key/add-local-guide-key-sequence "C-c a e")
