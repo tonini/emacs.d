@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: def1
+# key: def1
+# --
+def ${1:method}(${2:args}), do: $0
