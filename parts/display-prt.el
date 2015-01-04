@@ -5,7 +5,6 @@
 
 ;;; Code:
 
-
 (require 'cl)
 (require 'idle-highlight-mode)
 
@@ -27,16 +26,13 @@
 (menu-bar-mode -1)
 (tool-bar-mode 0)
 
-(set-frame-font "Source Code Pro-13")
-
 (set-frame-parameter nil 'fullscreen 'fullboth)
 (setq default-cursor-type 'box)
 
 (load (expand-file-name "~/.emacs.d/themes/tonini.el"))
 
 (defvar mode-line-cleaner-alist
-  `((auto-complete-mode . " α")
-    (eldoc-mode . "")
+  `((eldoc-mode . "")
     (rainbow-mode . "")
     (overseer-mode . "")
     (alchemist-mode . "")
@@ -49,6 +45,7 @@
     (flycheck-mode . "")
     (ruby-tools-mode . "")
     (rinari-minor-mode . "")
+    (smartparens-mode . "")
     (remove-trailing-whitespace-mode . "")
     (abbrev-mode . "")
     ;; Major modes

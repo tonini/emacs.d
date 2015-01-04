@@ -7,6 +7,7 @@
 (defun t-elixir-mode-hook ()
   (yas/minor-mode +1)
   (flycheck-mode +1)
+  (smartparens-mode +1)
   (tester-init-test-run #'alchemist-mix-test-file "_test.exs$")
   (tester-init-test-suite-run #'alchemist-mix-test))
 

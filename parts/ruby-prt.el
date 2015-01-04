@@ -30,6 +30,7 @@
      (defun t-ruby-mode-defaults ()
        (inf-ruby-minor-mode +1)
        (subword-mode +1)
+       (smartparens-mode +1)
        (tester-init-test-run #'rspec-run-single-file "_spec.rb$"))
 
      (add-hook 'ruby-mode-hook 't-ruby-mode-defaults)))
