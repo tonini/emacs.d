@@ -22,6 +22,7 @@
 (require 'ruby-prt)
 (require 'elixir-prt)
 (require 'emacs-lisp-prt)
+(require 'js-prt)
 (require 'yasnippet-prt)
 (require 'guide-key-prt)
 (require 'utils-prt)
