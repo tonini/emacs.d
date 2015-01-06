@@ -1,3 +1,10 @@
+;;; project-prt.el --- Project setup
+
+;;; Commentary:
+;;
+
+;;; Code:
+
 (add-to-list 'load-path "~/Projects/tester.el/")
 
 (provide 'project-prt)
@@ -46,3 +53,7 @@ Has no effect when `persp-show-modestring' is nil."
                   '("]")))))
 
 (persp-mode)
+
+(provide 'project-prt)
+
+;;; project-prt.el ends here
