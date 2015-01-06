@@ -44,3 +44,4 @@
 (depends-on "rspec-mode")
 (depends-on "rvm")
 (depends-on "guide-key")
+(depends-on "coffee-mode")
