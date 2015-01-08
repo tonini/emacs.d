@@ -29,7 +29,7 @@
 (set-frame-parameter nil 'fullscreen 'fullboth)
 (setq default-cursor-type 'box)
 
-(load (expand-file-name "~/.emacs.d/themes/tonini.el"))
+(load (expand-file-name "~/.emacs.d/themes/ujelly-theme.el"))
 
 (defvar mode-line-cleaner-alist
   `((eldoc-mode . "")
@@ -73,9 +73,9 @@ want to use in the modeline *in lieu of* the original.")
 
 (add-hook 'after-change-major-mode-hook 'clean-mode-line)
 
-(set-display-table-slot standard-display-table 'vertical-border (make-glyph-code ?\s))
+;; (set-display-table-slot standard-display-table 'vertical-border (make-glyph-code ?\s))
 
-(setq linum-format " ")
+(setq linum-format " %d ")
 (global-linum-mode t)
 
 (provide 'display-prt)
