@@ -77,7 +77,7 @@
 (global-set-key (kbd "M-z") 'undo)
 
 (global-set-key (kbd "M-SPC") 'set-mark-command)
-(global-set-key (kbd "M-S-SPC") 'mark-paragraph)
+(global-set-key (kbd "M-p") 'mark-paragraph)
 
 (global-unset-key (kbd "M-w")) ; kill-ring-save
 (global-unset-key (kbd "C-y")) ; yank
@@ -93,21 +93,12 @@
 (global-unset-key (kbd "C-x h")) ; mark-whole-buffer
 (global-unset-key (kbd "C-x C-w")) ; write-file
 (global-set-key (kbd "C-o") 'find-file)
-(global-set-key (kbd "C-S-n") 'write-file)
-(global-set-key (kbd "C-S-a") 'mark-whole-buffer)
-
-;; Help should search more than just commands
-(global-set-key (kbd "C-h a") 'apropos)
 
 ;; general
-(global-set-key (kbd "C-c e") 'eval-and-replace)
-(global-set-key (kbd "C-x C-m") 'execute-extended-command)
-(global-set-key (kbd "C-c C-m") 'execute-extended-command)
 (global-set-key (kbd "M-r") 'replace-string)
 (global-set-key (kbd "C-c i") 'indent-buffer)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
-;; (global-set-key (kbd "C-c C-k") 'cabbage-comment-or-uncomment-region-or-line)
 (global-set-key (kbd "C-c k") 'kill-compilation)
 (global-set-key (kbd "C-c w") 'remove-trailing-whitespace-mode)
 
@@ -127,15 +118,7 @@
 (define-key isearch-mode-map (kbd "C-f") 'isearch-repeat-forward)
 
 ;; power-edit bundle bindings
-(global-set-key (kbd "M-<up>") 'move-text-up)
-(global-set-key (kbd "C-M-i") 'move-text-up)
-(global-set-key (kbd "M-<down>") 'move-text-down)
-(global-set-key (kbd "C-M-k") 'move-text-down)
-(global-set-key (kbd "M-<right>")  'textmate-shift-right)
-(global-set-key (kbd "C-M-l")  'textmate-shift-right)
-(global-set-key (kbd "M-<left>") 'textmate-shift-left)
-(global-set-key (kbd "C-M-j") 'textmate-shift-left)
-
+(global-set-key (kbd "C-M") 't-move-text-up)
 (global-set-key (kbd "C-+") 'increase-font-size)
 (global-set-key (kbd "C--") 'decrease-font-size)
 (global-set-key (kbd "C-c C-w") 'whitespace-mode)
@@ -153,8 +136,9 @@
 (global-set-key (kbd "C-x M-r") 'ruby-compilation-this-buffer)
 (global-set-key (kbd "C-x M-k") 'kill-this-buffer)
 (global-set-key (kbd "C-x t") 'dired-other-window)
-(global-set-key (kbd "RET") 't-newline-and-indent)
-(global-set-key (kbd "M-RET") 't-duplicate-current-line-or-region)
+(global-set-key (kbd "M-RET") 't-newline-and-indent)
+(global-set-key (kbd "C-c C-c") 't-duplicate-current-line-or-region)
+
 
 ;; Help
 
