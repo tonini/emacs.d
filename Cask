@@ -46,3 +46,4 @@
 (depends-on "guide-key")
 (depends-on "coffee-mode")
 (depends-on "neotree")
+(depends-on "writeroom-mode")
