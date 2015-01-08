@@ -153,6 +153,8 @@
 (global-set-key (kbd "C-x M-r") 'ruby-compilation-this-buffer)
 (global-set-key (kbd "C-x M-k") 'kill-this-buffer)
 (global-set-key (kbd "C-x t") 'dired-other-window)
+(global-set-key (kbd "RET") 't-newline-and-indent)
+(global-set-key (kbd "M-RET") 't-duplicate-current-line-or-region)
 
 ;; Help
 
