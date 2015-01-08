@@ -202,6 +202,9 @@
 (global-set-key (kbd "M-e e") 'tester-run-test-file)
 (global-set-key (kbd "M-e s") 'tester-run-test-suite)
 
+;; Neotree
+(global-set-key (kbd "C-c .") 'neotree-toggle)
+
 ;; Popwin
 (global-set-key (kbd "C-y") popwin:keymap)
 
