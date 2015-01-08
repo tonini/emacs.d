@@ -8,6 +8,7 @@
 (require 'cl)
 (require 'idle-highlight-mode)
 
+(setq-default truncate-lines t)
 (setq visible-bell nil)
 (transient-mark-mode 1)
 (show-paren-mode 1)
@@ -75,7 +76,11 @@ want to use in the modeline *in lieu of* the original.")
 
 ;; (set-display-table-slot standard-display-table 'vertical-border (make-glyph-code ?\s))
 
-(setq linum-format " %d ")
+(defun linum-format-func (line)
+  (let ((w (length (number-to-string (count-lines (point-min) (point-max))))))
+     (propertize (format (format "%%%dd " w) line) 'face 'linum)))
+
+(setq linum-format 'linum-format-func)
 (global-linum-mode t)
 
 (provide 'display-prt)
