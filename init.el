@@ -29,7 +29,6 @@
 (require 'utils-prt)
 (require 'popwin-prt)
 (require 'keybindings-prt)
+(require 'custom-prt)
 
 (provide 'init)
-
-;;; init.el ends here
