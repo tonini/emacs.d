@@ -96,7 +96,7 @@
 
 ;; general
 (global-set-key (kbd "M-r") 'replace-string)
-(global-set-key (kbd "C-c i") 'indent-buffer)
+(global-set-key (kbd "C-c i") 't-indent-buffer)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 (global-set-key (kbd "C-c k") 'kill-compilation)
@@ -118,7 +118,8 @@
 (define-key isearch-mode-map (kbd "C-f") 'isearch-repeat-forward)
 
 ;; power-edit bundle bindings
-(global-set-key (kbd "C-M") 't-move-text-up)
+(global-set-key (kbd "C-c u") 't-move-text-up)
+(global-set-key (kbd "C-c n") 't-move-text-down)
 (global-set-key (kbd "C-+") 'increase-font-size)
 (global-set-key (kbd "C--") 'decrease-font-size)
 (global-set-key (kbd "C-c C-w") 'whitespace-mode)
