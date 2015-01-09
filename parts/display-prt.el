@@ -31,6 +31,7 @@
 (setq default-cursor-type 'box)
 
 (load (expand-file-name "~/.emacs.d/themes/ujelly-theme.el"))
+(load-theme 'ujelly t)
 
 (defvar mode-line-cleaner-alist
   `((eldoc-mode . "")
