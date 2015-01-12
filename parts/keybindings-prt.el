@@ -123,8 +123,6 @@
 (global-set-key (kbd "C-c n") 't-move-text-down)
 (global-set-key (kbd "C-M-l")  'textmate-shift-right)
 (global-set-key (kbd "C-M-j")  'textmate-shift-left)
-(global-set-key (kbd "C-+") 'increase-font-size)
-(global-set-key (kbd "C--") 'decrease-font-size)
 (global-set-key (kbd "C-c C-w") 'whitespace-mode)
 
 (global-set-key (kbd "M-t") 'projectile-find-file)
