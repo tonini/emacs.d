@@ -8,6 +8,8 @@
 (require 'cl)
 (require 'idle-highlight-mode)
 
+(winner-mode 1)
+
 (setq-default truncate-lines t)
 (setq visible-bell nil)
 (transient-mark-mode 1)
