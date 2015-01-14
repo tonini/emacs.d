@@ -11,6 +11,11 @@
   (tester-init-test-run #'alchemist-mix-test-file "_test.exs$")
   (tester-init-test-suite-run #'alchemist-mix-test))
 
+(defun custom-alchemist-hook ()
+  (set (make-local-variable 'company-backends) '(alchemist-company)))
+
+(add-hook 'alchemist-mode-hook  'custom-alchemist-hook)
+
 (add-hook 'elixir-mode-hook  't-elixir-mode-hook)
 
 (provide 'elixir-prt)
