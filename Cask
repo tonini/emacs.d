@@ -47,3 +47,4 @@
 (depends-on "coffee-mode")
 (depends-on "neotree")
 (depends-on "writeroom-mode")
+(depends-on "sass-mode")
