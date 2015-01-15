@@ -48,3 +48,4 @@
 (depends-on "neotree")
 (depends-on "writeroom-mode")
 (depends-on "sass-mode")
+(depends-on "erlang")
