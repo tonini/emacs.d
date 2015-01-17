@@ -17,8 +17,11 @@
 (defun custom-alchemist-hook ()
   (set (make-local-variable 'company-backends) '(alchemist-company)))
 
-(add-hook 'alchemist-mode-hook  'custom-alchemist-hook)
+(defun t-erlang-mode-hook ()
+  (define-key erlang-mode-map (kbd "M-,") 'alchemist-goto-jump-back))
 
+(add-hook 'alchemist-mode-hook  'custom-alchemist-hook)
 (add-hook 'elixir-mode-hook  't-elixir-mode-hook)
+(add-hook 'erlang-mode-hook 't-erlang-mode-hook)
 
 (provide 'elixir-prt)
