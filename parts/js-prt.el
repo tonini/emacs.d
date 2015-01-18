@@ -18,6 +18,7 @@
   '(progn
      (defun t-js-mode-defaults ()
        (setq js2-basic-offset 2)
+       (smartparens-mode +1)
        (local-unset-key (kbd "M-j")) ;; I use M-j for backward-char globaly
        (setq mode-name "JS2")
        (js2-imenu-extras-mode +1))
