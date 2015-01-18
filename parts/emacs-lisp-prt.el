@@ -27,7 +27,6 @@
   (rainbow-mode +1)
   (flycheck-mode +1)
   (setq mode-name "EL")
-  (yas/minor-mode +1)
   (smartparens-mode +1)
   (tester-init-test-run #'overseer-test-file "test.el$")
   (tester-init-test-suite-run #'overseer-test))
