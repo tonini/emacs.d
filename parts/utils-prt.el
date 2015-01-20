@@ -107,6 +107,11 @@ there's a region, all lines that region covers will be duplicated."
   (interactive)
   (indent-region (point-min) (point-max)))
 
+(defun t-insert-date ()
+  (interactive)
+  (let ((date (format-time-string "%Y-%m-%d")))
+    (insert date)))
+
 (provide 'utils-prt)
 
 ;;; utils-prt.el ends here
