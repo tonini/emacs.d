@@ -1,0 +1,7 @@
+#name : describe
+# key: desc
+# contributor: Samuel Tonini
+# --
+describe "$1" do
+  $0
+end

@@ -1,0 +1,7 @@
+#name: it
+# key: it
+# contributor: Samuel Tonini
+# --
+it "$1" do
+  $0
+end
