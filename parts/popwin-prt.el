@@ -22,6 +22,7 @@
 (push '("*mix*" :height 25 :noselect t) popwin:special-display-config)
 (push '("*alchemist message*" :height 20 :noselect t) popwin:special-display-config)
 (push '("*overseer*" :height 35 :noselect t :stick nil) popwin:special-display-config)
+(push '("*karma start*" :height 35 :noselect t :stick nil) popwin:special-display-config)
 
 (provide 'popwin-prt)
 
