@@ -23,7 +23,6 @@
 (depends-on "let-alist")
 (depends-on "magit")
 (depends-on "package-build")
-(depends-on "pallet")
 (depends-on "perspective")
 (depends-on "pkg-info")
 (depends-on "popwin")

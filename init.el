@@ -9,8 +9,6 @@
 
 (cask-initialize)
 
-(require 'pallet)
-
 (add-to-list 'load-path (expand-file-name "parts" user-emacs-directory))
 
 (require 'programming-prt)
