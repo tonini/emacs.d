@@ -30,3 +30,5 @@
 (require 'custom-prt)
 
 (provide 'init)
+
+;;; init.el ends here
