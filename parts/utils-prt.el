@@ -112,6 +112,22 @@ there's a region, all lines that region covers will be duplicated."
   (let ((date (format-time-string "%Y-%m-%d")))
     (insert date)))
 
+(defvar t-shell-command-buffer-name "*Shell Output*")
+(defvar t-shell-command-error-buffer-name nil)
+
+(defun t-shell-command (command)
+  (interactive
+   (list
+    (read-shell-command (format "λ ~/%s " (file-relative-name (projectile-project-root) (expand-file-name "~"))) nil nil
+                        (let ((filename
+                               (cond
+                                (buffer-file-name)
+                                ((eq major-mode 'dired-mode)
+                                 (dired-get-filename nil t)))))
+                          (and filename (file-relative-name filename))))))
+  (projectile-with-default-dir (projectile-project-root)
+    (async-shell-command command t-shell-command-buffer-name)))
+
 (provide 'utils-prt)
 
 ;;; utils-prt.el ends here

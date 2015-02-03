@@ -179,6 +179,8 @@
 (global-set-key (kbd "C-x b") 'projectile-switch-to-buffer)
 (global-set-key (kbd "C-x C-b") 'projectile-ibuffer)
 
+(global-set-key (kbd "M-q") 't-shell-command)
+
 ;; Test bindings
 
 (defvar testing-map)
