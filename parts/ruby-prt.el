@@ -19,7 +19,6 @@
 
 (eval-after-load 'ruby-mode
   '(progn
-
      (setq rspec-spec-command "rspec")
      (setq rspec-use-rake-when-possible nil)
      (setq rspec-use-bundler-when-possible t)
