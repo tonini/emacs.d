@@ -21,7 +21,8 @@
        (smartparens-mode +1)
        (local-unset-key (kbd "M-j")) ;; I use M-j for backward-char globaly
        (setq mode-name "JS2")
-       (js2-imenu-extras-mode +1))
+       (js2-imenu-extras-mode +1)
+       (tester-init-test-suite-run #'karma-start-single-run))
 
      (add-hook 'js2-mode-hook 't-js-mode-defaults)))
 
