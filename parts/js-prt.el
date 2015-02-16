@@ -10,8 +10,9 @@
 (require 'js2-mode)
 (require 'karma)
 
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.js\\.erb\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.js" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\.erb" . js2-mode))
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
 
 (eval-after-load 'js2-mode
