@@ -48,3 +48,4 @@
 (depends-on "writeroom-mode")
 (depends-on "sass-mode")
 (depends-on "erlang")
+(depends-on "yaml-mode")
