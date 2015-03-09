@@ -32,8 +32,7 @@
 (set-frame-parameter nil 'fullscreen 'fullboth)
 (setq default-cursor-type 'box)
 
-(load (expand-file-name "~/.emacs.d/themes/ujelly-theme.el"))
-(load-theme 'ujelly t)
+(load (expand-file-name "~/.emacs.d/themes/github.el"))
 
 (defvar mode-line-cleaner-alist
   `((eldoc-mode . "")
