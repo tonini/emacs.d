@@ -32,7 +32,7 @@
 (set-frame-parameter nil 'fullscreen 'fullboth)
 (setq default-cursor-type 'box)
 
-(load (expand-file-name "~/.emacs.d/themes/github.el"))
+(load (expand-file-name "~/.emacs.d/themes/tonini.el"))
 
 (defvar mode-line-cleaner-alist
   `((eldoc-mode . "")
