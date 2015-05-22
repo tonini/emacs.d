@@ -166,8 +166,6 @@
 (global-set-key (kbd "C-c e r") 'eval-region)
 (global-set-key (kbd "C-c e l") 'eval-last-sexp)
 
-(key-chord-define-global "gg" 'magit-grep)
-
 (global-set-key (kbd "C-x p") 'projectile-persp-switch-project)
 (global-set-key (kbd "C-c C-k") 't-comment-or-uncomment-region-or-line)
 (global-set-key (kbd "C-p s") 'persp-switch)
