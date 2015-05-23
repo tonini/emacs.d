@@ -29,6 +29,7 @@
 (require 'utils-prt)
 (require 'popwin-prt)
 (require 'keybindings-prt)
+(require 'writer-prt)
 (require 'custom-prt)
 
 (provide 'init)

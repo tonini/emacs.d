@@ -5,7 +5,6 @@
 
 ;;; Code:
 
-
 (defun author-mode ()
   (interactive)
   (markdown-mode)
