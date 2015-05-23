@@ -128,6 +128,19 @@ there's a region, all lines that region covers will be duplicated."
   (projectile-with-default-dir (projectile-project-root)
     (async-shell-command command t-shell-command-buffer-name)))
 
+;; source: http://batsov.com/articles/2011/11/12/emacs-tip-number-2-open-file-in-external-program/
+(defun t-open-with ()
+  "Simple function that allows us to open the underlying
+file of a buffer in an external program."
+  (interactive)
+  (when buffer-file-name
+    (shell-command (concat
+                    (if (eq system-type 'darwin)
+                        "open"
+                      (read-shell-command "Open current file with: "))
+                    " "
+                    buffer-file-name))))
+
 (provide 'utils-prt)
 
 ;;; utils-prt.el ends here
