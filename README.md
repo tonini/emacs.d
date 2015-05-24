@@ -69,7 +69,7 @@ Contributions are very welcome!
 
 ## License
 
-Copyright © 2014-2015 Samuel Tonini
+Copyright © 2015 Samuel Tonini
 
 Distributed under the GNU General Public License, version 3
 
