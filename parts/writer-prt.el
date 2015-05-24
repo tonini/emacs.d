@@ -5,7 +5,7 @@
 
 ;;; Code:
 
-(defun author-mode ()
+(defun t-writer-mode ()
   (interactive)
   (markdown-mode)
   (linum-mode -1)
@@ -15,7 +15,7 @@
   (turn-off-smartparens-mode)
   (company-mode -1))
 
-(defun disable-author-mode ()
+(defun t-disable-writer-mode ()
   (interactive)
   (linum-mode t)
   (writeroom-mode -1)
