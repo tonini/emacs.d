@@ -31,6 +31,7 @@
 (require 'keybindings-prt)
 (require 'writer-prt)
 (require 'custom-prt)
+(require 'org-prt)
 
 (provide 'init)
 
