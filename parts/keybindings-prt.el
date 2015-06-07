@@ -179,6 +179,10 @@
 
 (global-set-key (kbd "M-q") 't-shell-command)
 
+;; Traverse through buffers
+(global-set-key (kbd "M->") 'next-buffer)
+(global-set-key (kbd "M-<") 'previous-buffer)
+
 ;; Test bindings
 
 (defvar testing-map)
