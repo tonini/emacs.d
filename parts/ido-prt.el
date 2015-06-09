@@ -1,7 +1,7 @@
 ;;; ido-prt.el --- Ido setup
 
 ;;; Commentary:
-;; 
+;;
 
 ;;; Code:
 
@@ -12,6 +12,7 @@
 (flx-ido-mode 1)
 (ido-vertical-mode 1)
 (setq ido-vertical-define-keys 'C-n-C-p-up-down)
+(setq ido-vertical-show-count nil)
 
 ;; disable ido faces to see flx highlights.
 (setq ido-enable-flex-matching t)
