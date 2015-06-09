@@ -85,6 +85,21 @@ want to use in the modeline *in lieu of* the original.")
 (setq linum-format 'linum-format-func)
 (global-linum-mode t)
 
+(eval
+ '(set-display-table-slot standard-display-table
+                          'vertical-border
+                          (make-glyph-code ?┃)))
+
+;; Flycheck faces
+;;
+;; - flycheck-warning
+;; - flycheck-error
+;; - flycheck-info
+;;
+(eval-after-load 'flycheck
+    '(progn
+      (set-face-attribute 'flycheck-warning nil :foreground "yellow" :underline nil)))
+
 (provide 'display-prt)
 
 ;;; display-prt.el ends here
