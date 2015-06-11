@@ -200,6 +200,15 @@
 ;; Popwin
 (global-set-key (kbd "C-y") popwin:keymap)
 
+;; Ido-Mode
+(defun ido-my-keys ()
+  (define-key ido-completion-map (kbd "M-k") 'ido-next-match)
+  (define-key ido-completion-map (kbd "M-i") 'ido-prev-match))
+
+(add-hook 'ido-setup-hook 'ido-my-keys)
+
+(define-key process-menu-mode-map (kbd "C-k") 't-delete-process-at-point)
+
 (provide 'keybindings-prt)
 
 ;;; keybindings-prt.el ends here

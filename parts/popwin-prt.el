@@ -17,7 +17,7 @@
 (push "*Kill Ring*" popwin:special-display-config)
 (push '(grep-mode :noselect t :stick t) popwin:special-display-config)
 (push '("*Messages*" :noselect t :stick t) popwin:special-display-config)
-(push '("*elixir help*" :height 25 :noselect t :stick t) popwin:special-display-config)
+;; (push '("*elixir help*" :height 25 :noselect t :stick t) popwin:special-display-config)
 (push '("*compilation*" :height 25 :noselect t :stick t) popwin:special-display-config)
 (push '("*mix*" :height 25 :noselect t) popwin:special-display-config)
 (push '("*alchemist message*" :height 20 :noselect t) popwin:special-display-config)

@@ -141,6 +141,16 @@ file of a buffer in an external program."
                     " "
                     buffer-file-name))))
 
+(defun t-delete-process-at-point ()
+  (interactive)
+  (let ((process (get-text-property (point) 'tabulated-list-id)))
+    (cond ((and process
+                (processp process))
+           (delete-process process)
+           (revert-buffer))
+          (t
+           (error "no process at point!")))))
+
 (provide 'utils-prt)
 
 ;;; utils-prt.el ends here
