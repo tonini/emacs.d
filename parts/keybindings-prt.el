@@ -207,6 +207,12 @@
 
 (add-hook 'ido-setup-hook 'ido-my-keys)
 
+;; Company-Mode
+(eval-after-load "company"
+  '(progn
+     (define-key company-active-map (kbd "M-k") 'company-select-next)
+     (define-key company-active-map (kbd "M-i") 'company-select-previous)))
+
 (define-key process-menu-mode-map (kbd "C-k") 't-delete-process-at-point)
 
 (provide 'keybindings-prt)
