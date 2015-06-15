@@ -90,6 +90,11 @@ want to use in the modeline *in lieu of* the original.")
                           'vertical-border
                           (make-glyph-code ?┃)))
 
+;; Smartparens faces
+;;
+;; - disable pair overlay for readability
+(setq sp-highlight-pair-overlay nil)
+
 ;; Flycheck faces
 ;;
 ;; - flycheck-warning
