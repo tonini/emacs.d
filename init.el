@@ -5,6 +5,7 @@
 
 ;;; Code:
 
+(setq package-enable-at-startup nil)
 (package-initialize)
 
 (require 'cask "~/.cask/cask.el")
