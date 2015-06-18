@@ -215,6 +215,11 @@
 
 (define-key process-menu-mode-map (kbd "C-k") 't-delete-process-at-point)
 
+(defun alchemist-my-iex-keys ()
+  (define-key alchemist-iex-mode-map (kbd "C-d") 'windmove-right))
+
+(add-hook 'alchemist-iex-mode-hook 'alchemist-my-iex-keys)
+
 (provide 'keybindings-prt)
 
 ;;; keybindings-prt.el ends here
