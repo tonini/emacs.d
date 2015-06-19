@@ -8,7 +8,7 @@
 (setq package-enable-at-startup nil)
 (package-initialize)
 
-(require 'cask "~/.cask/cask.el")
+(require 'cask "/usr/local/share/emacs/site-lisp/cask.el")
 
 (cask-initialize)
 
