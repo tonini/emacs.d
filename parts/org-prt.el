@@ -5,6 +5,8 @@
 
 ;;; Code:
 
+(add-to-list 'Info-default-directory-list "~/info")
+
 (add-hook 'org-mode-hook
           (lambda ()
             (local-set-key "\M-a" 'smex)))
@@ -62,6 +64,9 @@
                  (org-remove-inline-images)
                  (org-present-show-cursor)
                  (org-present-read-write)))))
+
+(load-file "~/Projects/emacs.d/vendor/ox-texinfo+.el")
+(require 'ox-texinfo+)
 
 (provide 'org-prt)
 

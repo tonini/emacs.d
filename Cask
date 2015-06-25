@@ -1,6 +1,8 @@
 (source gnu)
 (source melpa)
+(source org)
 
+(depends-on "org")
 (depends-on "ert-runner")
 (depends-on "cask")
 (depends-on "company")

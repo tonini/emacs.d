@@ -13,15 +13,17 @@
 (ido-vertical-mode 1)
 (setq ido-vertical-define-keys 'C-n-C-p-up-down)
 (setq ido-vertical-show-count nil)
+(setq ido-auto-merge-work-directories-length -1)
 
 ;; disable ido faces to see flx highlights.
-(setq ido-enable-flex-matching t)
 (setq ido-use-faces nil)
+(setq ido-enable-flex-matching t)
 
 (smex-initialize)
 (ido-ubiquitous t)
 
 (add-to-list 'ido-ignore-files "\\`node_modules/")
+(add-to-list 'ido-ignore-files "\\.DS_Store/")
 
 (setq *textmate-gf-exclude* "(/|^)(\\.+[^/]+|public|node_modules|vendor|fixtures|tmp|log|classes|build)($|/)|(\\.xcodeproj|\\.nib|\\.framework|\\.app|\\.pbproj|\\.pbxproj|\\.xcode|\\.xcodeproj|\\.bundle|\\.pyc)(/|$)")
 

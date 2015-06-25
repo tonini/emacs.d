@@ -168,7 +168,7 @@
 
 (global-set-key (kbd "C-x p") 'projectile-persp-switch-project)
 (global-set-key (kbd "C-c C-k") 't-comment-or-uncomment-region-or-line)
-(global-set-key (kbd "C-p s") 'persp-switch)
+(global-set-key (kbd "C-p s") 'projectile-persp-switch-project)
 (global-set-key (kbd "C-p p") 't-persp-last)
 (global-set-key (kbd "C-p d") 'persp-kill)
 (global-set-key (kbd "C-p x") 'persp-kill)

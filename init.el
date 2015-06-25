@@ -33,6 +33,8 @@
 (require 'writer-prt)
 (require 'custom-prt)
 (require 'org-prt)
+(require 'dired-prt)
+(require 'grep-prt)
 
 (provide 'init)
 
