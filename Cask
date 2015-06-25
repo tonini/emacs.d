@@ -51,3 +51,4 @@
 (depends-on "sass-mode")
 (depends-on "erlang")
 (depends-on "yaml-mode")
+(depends-on "magit" :git "https://github.com/magit/magit" :ref "next")
