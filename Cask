@@ -2,6 +2,7 @@
 (source melpa)
 (source org)
 
+(depends-on "pallet")
 (depends-on "org")
 (depends-on "ert-runner")
 (depends-on "cask")
