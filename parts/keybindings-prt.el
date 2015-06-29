@@ -132,7 +132,11 @@
 
 (global-set-key (kbd "M-a") 'smex)
 
-(key-chord-mode 1)
+(key-chord-mode +1)
+
+(key-chord-define-global "BB" 'beginning-of-buffer)
+(key-chord-define-global "EE" 'end-of-buffer)
+(key-chord-define-global "jk" 'list-processes)
 
 (global-set-key (kbd "C-c c") 'org-capture)
 (global-set-key (kbd "C-x M-r") 'ruby-compilation-this-buffer)
@@ -140,7 +144,6 @@
 (global-set-key (kbd "C-x t") 'dired-other-window)
 (global-set-key (kbd "M-RET") 't-newline-and-indent)
 (global-set-key (kbd "C-c C-c") 't-duplicate-current-line-or-region)
-
 
 ;; Help
 
