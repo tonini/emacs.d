@@ -26,7 +26,7 @@
 
 (defun t-persp-last ()
   (interactive)
-  (persp-switch (persp-name persp-last)))
+  (projectile-switch-project-by-name (persp-name persp-last)))
 
 (defun t-project-ido-find-project ()
   (interactive)
