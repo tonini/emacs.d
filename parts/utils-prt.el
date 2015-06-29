@@ -126,7 +126,10 @@ there's a region, all lines that region covers will be duplicated."
                                  (dired-get-filename nil t)))))
                           (and filename (file-relative-name filename))))))
   (projectile-with-default-dir (projectile-project-root)
-    (async-shell-command command t-shell-command-buffer-name)))
+    (async-shell-command command t-shell-command-buffer-name)
+    (with-current-buffer t-shell-command-buffer-name
+      (read-only-mode)
+      (local-set-key (kbd "q") 'quit-window))))
 
 ;; source: http://batsov.com/articles/2011/11/12/emacs-tip-number-2-open-file-in-external-program/
 (defun t-open-with ()
