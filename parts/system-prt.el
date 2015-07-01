@@ -19,9 +19,6 @@
 ;; enable y/n answers
 (fset 'yes-or-no-p 'y-or-n-p)
 
-;; Allow this Emacs process to be a server for client processes.
-(server-start)
-
 ;; write a PID file for the emacs-server
 (setq pidfile "~/.emacsserver.pid")
 
@@ -44,9 +41,11 @@
 (setq gc-cons-threshold 20000000)
 
 (setq delete-old-versions t)
-(setq auto-save-default nil)
 (setq make-backup-files nil)
+(setq create-lockfiles nil)
 
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
 
 (setq ring-bell-function 'ignore)
 
@@ -63,6 +62,9 @@
 (setq interprogram-paste-function 'copy-from-osx)
 
 (add-hook 'before-save-hook 'whitespace-cleanup)
+
+;; Allow this Emacs process to be a server for client processes.
+(server-start)
 
 (provide 'system-prt)
 
