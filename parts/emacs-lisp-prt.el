@@ -20,6 +20,7 @@
         (append *textmate-project-roots* '("Cask" ".cask"))))
 
 (defun t-emacs-lisp-mode-hook ()
+  (show-paren-mode +1)
   (turn-on-eldoc-mode)
   (rainbow-delimiters-mode +1)
   (rainbow-mode +1)
