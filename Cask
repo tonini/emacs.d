@@ -26,6 +26,7 @@
 (depends-on "js2-mode")
 (depends-on "key-chord")
 (depends-on "let-alist")
+(depends-on "magit")
 (depends-on "markdown-mode")
 (depends-on "marmalade-client")
 (depends-on "neotree")
