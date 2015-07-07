@@ -72,6 +72,13 @@
        `(company-tooltip-common ((,class (:foreground ,ujelly-red-0 :background ,ujelly-grey-3))))
        `(company-tooltip-common-selection ((,class (:foreground ,ujelly-red-0 :background ,ujelly-purple-1))))
        `(company-tooltip-selection ((,class (:background ,ujelly-purple-1))))
+       ;;;;;
+       ;; alchemist
+       ;;
+       ;; alchemist-buffer--success-face  - Face for successful compilation run
+       ;; alchemist-buffer--failed-face   - Face for failed compilation run
+       `(alchemist-buffer--success-face ((t (:inherit font-lock-variable-name-face :bold t :background nil :foreground "darkgreen"))))
+       `(alchemist-buffer--failed-face ((t (:inherit font-lock-variable-name-face :bold t :background nil :foreground "red"))))
 
        `(compilation-error ((,class (:foreground ,ujelly-red-0))))
        `(compilation-info ((,class (:foreground ,ujelly-yellow-0))))
