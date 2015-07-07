@@ -137,7 +137,7 @@
 (key-chord-define-global "BB" 'beginning-of-buffer)
 (key-chord-define-global "EE" 'end-of-buffer)
 (key-chord-define-global "jk" 'list-processes)
-(key-chord-define-global "kr" 'browse-kill-ring)
+(key-chord-define-global "XX" 'browse-kill-ring)
 
 (global-set-key (kbd "C-c c") 'org-capture)
 (global-set-key (kbd "C-x M-r") 'ruby-compilation-this-buffer)
