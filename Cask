@@ -17,6 +17,7 @@
 (depends-on "flycheck")
 (depends-on "git-commit-mode")
 (depends-on "git-rebase-mode")
+(depends-on "github-browse-file")
 (depends-on "guide-key")
 (depends-on "idle-highlight-mode")
 (depends-on "ido-completing-read+")
