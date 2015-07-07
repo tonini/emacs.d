@@ -182,6 +182,8 @@
 (global-set-key (kbd "C-x C-b") 'projectile-ibuffer)
 
 (global-set-key (kbd "M-q") 't-shell-command)
+(global-set-key (kbd "C-c M-d") 't-delete-current-buffer-file)
+
 
 ;; Traverse through buffers
 (global-set-key (kbd "M->") 'next-buffer)

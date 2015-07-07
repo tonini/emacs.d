@@ -115,6 +115,15 @@ there's a region, all lines that region covers will be duplicated."
 (defvar t-shell-command-buffer-name "*Shell Output*")
 (defvar t-shell-command-error-buffer-name nil)
 
+(defun t-delete-current-buffer-file ()
+  (interactive)
+  (let ((file (buffer-file-name))
+        (buffer-name (buffer-name)))
+    (if (y-or-n-p (format "Delete %s?: " file))
+        (progn
+          (kill-buffer buffer-name)
+          (delete-file file)))))
+
 (defun t-shell-command (command)
   (interactive
    (list
