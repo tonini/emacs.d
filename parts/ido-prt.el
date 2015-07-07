@@ -5,6 +5,8 @@
 
 ;;; Code:
 
+(require 'ido)
+(require 'flx-ido)
 (setq gc-cons-threshold 20000000)
 
 (ido-mode 1)
