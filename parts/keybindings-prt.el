@@ -103,7 +103,7 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 (global-set-key (kbd "C-c k") 'kill-compilation)
-(global-set-key (kbd "C-c w") 'remove-trailing-whitespace-mode)
+(global-set-key (kbd "C-c w") 'delete-trailing-whitespace)
 
 (global-unset-key (kbd "C-M-r")) ;; isearch-backwards
 (global-set-key (kbd "C-f") 'isearch-forward-regexp)
