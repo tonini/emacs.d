@@ -7,8 +7,10 @@
 
 (require 'cl)
 (require 'idle-highlight-mode)
+(require 'zoom-window)
 
-(winner-mode 1)
+;; zoom-window configuration
+(setq zoom-window-mode-line-color "DarkGreen")
 
 (setq-default truncate-lines t)
 (setq visible-bell nil)
