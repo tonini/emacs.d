@@ -54,7 +54,7 @@
 (global-set-key (kbd "M-2") 'split-window-vertically)
 (global-set-key (kbd "M-3") 'split-window-horizontally)
 (global-set-key (kbd "M-4") 'balance-windows)
-(global-set-key (kbd "M-9") 'winner-undo)
+(global-set-key (kbd "M-9") 'delete-other-windows)
 (global-set-key (kbd "M-+") 'balance-windows)
 
 ;; Zoom-Window
@@ -174,14 +174,18 @@
 
 (global-set-key (kbd "C-x p") 'projectile-persp-switch-project)
 (global-set-key (kbd "C-c C-k") 't-comment-or-uncomment-region-or-line)
-(global-set-key (kbd "C-p s") 'projectile-persp-switch-project)
+
+;; Perspective
+
+(global-set-key (kbd "C-p s") 'persp-switch)
 (global-set-key (kbd "C-p p") 't-persp-last)
+(global-set-key (kbd "C-p e") 't-emacs-conf-persp)
 (global-set-key (kbd "C-p d") 'persp-kill)
 (global-set-key (kbd "C-p x") 'persp-kill)
 (global-set-key (kbd "C-_") 'company-complete)
 
-(global-set-key (kbd "C-x b") 'projectile-switch-to-buffer)
-(global-set-key (kbd "C-x C-b") 'projectile-ibuffer)
+(global-set-key (kbd "C-x b") 'ido-switch-buffer)
+(global-set-key (kbd "C-x C-b") 'ibuffer)
 
 (global-set-key (kbd "M-q") 't-shell-command)
 (global-set-key (kbd "C-c M-d") 't-delete-current-buffer-file)

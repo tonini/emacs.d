@@ -26,7 +26,13 @@
 
 (defun t-persp-last ()
   (interactive)
-  (projectile-switch-project-by-name (persp-name persp-last)))
+  (persp-switch (persp-name persp-last)))
+
+(defun t-emacs-conf-persp ()
+  (interactive)
+  (t-persp "@emacs.d"
+           (let ((default-directory "~/Projects/emacs.d/"))
+             (textmate-goto-file))))
 
 (defun t-project-ido-find-project ()
   (interactive)
