@@ -31,12 +31,12 @@
 (require 'guide-key-prt)
 (require 'utils-prt)
 (require 'popwin-prt)
-(require 'keybindings-prt)
 (require 'writer-prt)
 (require 'custom-prt)
 (require 'org-prt)
 (require 'dired-prt)
 (require 'grep-prt)
+(require 'keybindings-prt)
 
 (provide 'init)
 
