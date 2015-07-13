@@ -180,6 +180,7 @@
 (global-set-key (kbd "C-p s") 'persp-switch)
 (global-set-key (kbd "C-p p") 't-persp-last)
 (global-set-key (kbd "C-p e") 't-emacs-conf-persp)
+(global-set-key (kbd "C-p o") 't-org-persp)
 (global-set-key (kbd "C-p d") 'persp-kill)
 (global-set-key (kbd "C-p x") 'persp-kill)
 (global-set-key (kbd "C-_") 'company-complete)

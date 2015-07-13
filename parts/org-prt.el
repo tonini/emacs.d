@@ -5,6 +5,15 @@
 
 ;;; Code:
 
+(require 'org)
+(require 'org-present)
+
+(defun t-org-persp ()
+  (interactive)
+  (t-persp "@org"
+           (let ((default-directory "~/Dropbox/org/"))
+             (find-file "notes.org"))))
+
 (add-to-list 'Info-default-directory-list "~/info")
 
 (add-hook 'org-mode-hook

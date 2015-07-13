@@ -32,6 +32,7 @@
 (depends-on "marmalade-client")
 (depends-on "neotree")
 (depends-on "org")
+(depends-on "org-present")
 (depends-on "package-build")
 (depends-on "pallet")
 (depends-on "persp-projectile")
