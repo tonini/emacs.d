@@ -1,4 +1,4 @@
-;;; keybindings-prt.el --- Keybinding setup
+;; keybindings-prt.el --- Keybinding setup
 
 ;;; Commentary:
 ;;
@@ -128,7 +128,7 @@
 (global-set-key (kbd "C-c C-w") 'whitespace-mode)
 
 (global-set-key (kbd "M-t") 'projectile-find-file)
-(global-set-key (kbd "M-w") 'textmate-goto-symbol)
+(global-set-key (kbd "M-w") 't-ido-goto-symbol)
 
 (global-set-key (kbd "C-x g") 'magit-status)
 
