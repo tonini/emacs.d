@@ -37,6 +37,11 @@
        'ujelly
        `(default ((,class (:foreground ,ujelly-fg :background ,ujelly-bg))))
        ;;;;;
+       ;; perspective
+       ;;
+       ;; persp-selected-face              - Face used to highlight the current perspective on the modeline.
+       `(persp-selected-face ((t (:foreground ,ujelly-green-0 :weight normal))))
+       ;;;;;
        ;; smartparens
        ;;
        ;; sp-show-smartparens-mode         - Face used for a mismatching pair.
