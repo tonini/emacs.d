@@ -65,13 +65,14 @@
        ;; company-preview-search           - Face used for the search string in the completion preview
        ;; company-echo                     - Face used for completions in the echo area
        ;; company-echo-common              - Face used for the common part of completions in the echo area
-       `(company-preview-common ((,class (:foreground nil :background ,ujelly-purple-1))))
+       `(company-preview-common ((,class (:foreground nil :background ,ujelly-grey-1))))
        `(company-scrollbar-bg ((,class (:background ,ujelly-grey-2))))
        `(company-scrollbar-fg ((,class (:background ,ujelly-grey-0))))
        `(company-tooltip ((,class (:foreground ,ujelly-fg :background ,ujelly-grey-3))))
        `(company-tooltip-common ((,class (:foreground ,ujelly-red-0 :background ,ujelly-grey-3))))
-       `(company-tooltip-common-selection ((,class (:foreground ,ujelly-red-0 :background ,ujelly-purple-1))))
-       `(company-tooltip-selection ((,class (:background ,ujelly-purple-1))))
+       `(company-tooltip-annotation ((,class (:foreground ,ujelly-grey-0 :background ,ujelly-grey-3))))
+       `(company-tooltip-common-selection ((,class (:foreground ,ujelly-red-0 :background ,ujelly-grey-2))))
+       `(company-tooltip-selection ((,class (:background ,ujelly-grey-4))))
        ;;;;;
        ;; alchemist
        ;;
