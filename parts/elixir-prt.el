@@ -31,6 +31,10 @@
 (defun t-erlang-mode-hook ()
   (define-key erlang-mode-map (kbd "M-,") 'alchemist-goto-jump-back))
 
+(defun t-alchemist-custom-keybindings ()
+  (define-key alchemist-mode-map (kbd "M-w") 'alchemist-goto-list-symbol-definitions))
+
+(add-hook 'alchemist-mode-hook 't-alchemist-custom-keybindings)
 (add-hook 'elixir-mode-hook  't-elixir-mode-hook)
 (add-hook 'erlang-mode-hook 't-erlang-mode-hook)
 
