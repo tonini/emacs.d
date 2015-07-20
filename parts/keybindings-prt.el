@@ -158,6 +158,7 @@
 (global-set-key (kbd "C-h e c") 'finder-commentary)
 (global-set-key (kbd "C-h e e") 'view-echo-area-messages)
 (global-set-key (kbd "C-h e f") 'find-function)
+(global-set-key (kbd "C-h e v") 'find-variable)
 (global-set-key (kbd "C-h e F") 'find-face-definition)
 (global-set-key (kbd "C-h e i") 'info-apropos)
 (global-set-key (kbd "C-h e k") 'find-function-on-key)
