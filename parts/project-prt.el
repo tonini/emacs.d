@@ -11,11 +11,11 @@
 (require 'projectile)
 (require 'perspective)
 (require 'textmate)
-(require 'persp-projectile)
 (require 'tester)
 
 (projectile-global-mode)
 (persp-mode)
+(require 'persp-projectile)
 
 (defvar t-project-location (expand-file-name "~/Projects/"))
 
@@ -33,6 +33,18 @@
   (t-persp "@emacs.d"
            (let ((default-directory "~/Projects/emacs.d/"))
              (textmate-goto-file))))
+
+(defun t-main-persp ()
+  (interactive)
+  (t-persp "main"
+           (let ((default-directory "~/Projects/")))))
+
+(defun t-persp-kill-all ()
+  "Kill all existing perspectives."
+  (interactive)
+  (cl-loop for persp-name in (persp-names) do
+           (when (not (string= persp-name "main"))
+             (persp-kill persp-name))))
 
 (defun t-project-ido-find-project ()
   (interactive)
@@ -57,8 +69,6 @@ Has no effect when `persp-show-modestring' is nil."
           (append '("[")
                   (persp-intersperse (mapcar 'persp-format-name (persp-names)) "")
                   '("]")))))
-
-(persp-mode)
 
 (provide 'project-prt)
 
