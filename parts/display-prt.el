@@ -108,6 +108,44 @@ want to use in the modeline *in lieu of* the original.")
     '(progn
       (set-face-attribute 'flycheck-warning nil :foreground "yellow" :underline nil)))
 
+;; Display current git branch and changes for current file in mode-line
+
+(defun t-git-repo-has-changes-p ()
+  "Return non-nil if the current git repository have changes."
+  (let ((changes (shell-command-to-string "git status --porcelain")))
+    (not (string-empty-p changes))))
+
+(defface t-git-branch-has-changes-face
+  '((t (:inherit font-lock-variable-name-face :weight normal)))
+  "Face for branch when uncommited changes exists.")
+
+(defface t-git-branch-has-no-changes-face
+  '((t (:inherit font-lock-builtin-face :foreground "#99ad6a" :weight normal)))
+  "Face for branch when no changes exists.")
+
+(defun t-format-git-mode-line (git-mode-line)
+  (let* ((git-mode-line (replace-regexp-in-string "\\(Git-\\|Git:\\)" "" git-mode-line))
+         (branch (car (split-string git-mode-line " ")))
+         (changes (car (cdr (split-string git-mode-line " ")))))
+    (concat "[git:"
+            (if (t-git-repo-has-changes-p)
+                (propertize branch 'face 't-git-branch-has-changes-face)
+              (propertize branch 'face 't-git-branch-has-no-changes-face))
+            (when changes
+              (format " %s" changes))
+            "]")))
+
+;; source: http://superuser.com/questions/576953/how-do-i-show-the-git-status-in-the-emacs-bottom-bar
+(defadvice vc-git-mode-line-string (after plus-minus (file) compile activate)
+  (setq ad-return-value
+        (t-format-git-mode-line
+         (concat ad-return-value
+                 (let ((plus-minus (vc-git--run-command-string
+                                    file "diff" "--numstat" "--")))
+                   (and plus-minus
+                        (string-match "^\\([0-9]+\\)\t\\([0-9]+\\)\t" plus-minus)
+                        (format " +%s-%s" (match-string 1 plus-minus) (match-string 2 plus-minus))))))))
+
 (provide 'display-prt)
 
 ;;; display-prt.el ends here
