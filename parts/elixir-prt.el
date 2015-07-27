@@ -33,6 +33,10 @@
 (defun t-alchemist-custom-keybindings ()
   (define-key alchemist-mode-map (kbd "M-w") 'alchemist-goto-list-symbol-definitions))
 
+(defun alchemist-my-iex-keys ()
+  (define-key alchemist-iex-mode-map (kbd "C-d") 'windmove-right))
+
+(add-hook 'alchemist-iex-mode-hook 'alchemist-my-iex-keys)
 (add-hook 'alchemist-mode-hook 't-alchemist-custom-keybindings)
 (add-hook 'elixir-mode-hook  't-elixir-mode-hook)
 (add-hook 'erlang-mode-hook 't-erlang-mode-hook)

@@ -14,14 +14,10 @@
 (global-set-key (kbd "M-l") 'forward-char)
 (global-set-key (kbd "M-i") 'previous-line)
 (global-set-key (kbd "M-I") 'scroll-down)
-(global-set-key (kbd "M-C-i") 'scroll-down)
 (global-set-key (kbd "M-k") 'next-line)
 (global-set-key (kbd "M-K") 'scroll-up)
-(global-set-key (kbd "M-C-k") 'scroll-up)
 (global-set-key (kbd "M-L") 'end-of-line)
-(global-set-key (kbd "M-C-l") 'end-of-line)
 (global-set-key (kbd "M-J") 'beginning-of-line)
-(global-set-key (kbd "M-C-j") 'beginning-of-line)
 
 (global-unset-key (kbd "M-b")) ; backward-word
 (global-unset-key (kbd "M-f")) ; forward-word
@@ -72,15 +68,12 @@
 (global-set-key (kbd "C-s") 'windmove-down)
 (global-set-key (kbd "C-a") 'windmove-left)
 (global-set-key (kbd "C-w") 'windmove-up)
-(global-set-key (kbd "M-s") 'move-cursor-next-pane)
-(global-set-key (kbd "M-S") 'move-cursor-previous-pane)
 
 (global-unset-key (kbd "C-/")) ; undo
 (global-unset-key (kbd "C-_")) ; undo
 (global-set-key (kbd "M-z") 'undo)
 
 (global-set-key (kbd "M-SPC") 'set-mark-command)
-(global-set-key (kbd "M-p") 'mark-paragraph)
 
 (global-unset-key (kbd "M-w")) ; kill-ring-save
 (global-unset-key (kbd "C-y")) ; yank
@@ -111,7 +104,6 @@
 
 (global-set-key (kbd "C-c r") 'revert-buffer)
 
-(define-key isearch-mode-map (kbd "M-s") 'move-cursor-next-pane)
 (define-key isearch-mode-map (kbd "M-v") 'isearch-yank-kill)
 (define-key isearch-mode-map (kbd "M-w") 'isearch-query-replace)
 (define-key isearch-mode-map (kbd "M-o") 'isearch-yank-word)
@@ -192,7 +184,6 @@
 (global-set-key (kbd "M-q") 't-shell-command)
 (global-set-key (kbd "C-c M-d") 't-delete-current-buffer-file)
 
-
 ;; Traverse through buffers
 (global-set-key (kbd "M->") 'next-buffer)
 (global-set-key (kbd "M-<") 'previous-buffer)
@@ -212,18 +203,10 @@
 (global-set-key (kbd "M-e e") 'tester-run-test-file)
 (global-set-key (kbd "M-e s") 'tester-run-test-suite)
 
-;; Neotree
-(global-set-key (kbd "C-c .") 'neotree-toggle)
-
 ;; Popwin
 (global-set-key (kbd "C-y") popwin:keymap)
 
 (define-key process-menu-mode-map (kbd "C-k") 't-delete-process-at-point)
-
-(defun alchemist-my-iex-keys ()
-  (define-key alchemist-iex-mode-map (kbd "C-d") 'windmove-right))
-
-(add-hook 'alchemist-iex-mode-hook 'alchemist-my-iex-keys)
 
 (provide 'keybindings-prt)
 
