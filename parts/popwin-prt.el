@@ -4,7 +4,7 @@
 ;;
 
 ;;; Code:
-
+(require 'popwin)
 (popwin-mode 1)
 
 (defun popwin-bkr:update-window-reference ()
