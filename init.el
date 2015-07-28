@@ -25,7 +25,7 @@
 (require 'js-prt)
 (require 'coffee-prt)
 (require 'yasnippet-prt)
-(require 'guide-key-prt)
+(require 'which-key-prt)
 (require 'utils-prt)
 (require 'popwin-prt)
 (require 'writer-prt)
