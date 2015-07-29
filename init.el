@@ -13,6 +13,8 @@
 
 (add-to-list 'load-path (expand-file-name "parts" user-emacs-directory))
 
+(require 'smartparens-prt)
+(require 'magit-prt)
 (require 'programming-prt)
 (require 'project-prt)
 (require 'ido-prt)
