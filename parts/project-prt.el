@@ -32,7 +32,7 @@
   (interactive)
   (t-persp "@emacs.d"
            (let ((default-directory "~/Projects/emacs.d/"))
-             (textmate-goto-file))))
+             (projectile-find-file))))
 
 (defun t-main-persp ()
   (interactive)
