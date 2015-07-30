@@ -57,7 +57,6 @@
 (global-set-key (kbd "M-1") 'zoom-window-zoom)
 
 (global-unset-key (kbd "M-x")) ; execute-extended-command
-(global-set-key (kbd "M-a") 'execute-extended-command)
 (global-set-key (kbd "M-q") 'shell-command)
 
 (global-unset-key (kbd "C-d"))
@@ -88,7 +87,6 @@
 (global-unset-key (kbd "C-x C-f")) ; find-file
 (global-unset-key (kbd "C-x h")) ; mark-whole-buffer
 (global-unset-key (kbd "C-x C-w")) ; write-file
-(global-set-key (kbd "C-o") 'find-file)
 
 ;; general
 (global-set-key (kbd "M-r") 'replace-string)
@@ -120,7 +118,6 @@
 (global-set-key (kbd "C-c C-w") 'whitespace-mode)
 
 (global-set-key (kbd "M-t") 'projectile-find-file)
-(global-set-key (kbd "M-w") 't-ido-goto-symbol)
 
 (global-set-key (kbd "C-x g") 'magit-status)
 
@@ -203,8 +200,21 @@
 (global-set-key (kbd "M-e e") 'tester-run-test-file)
 (global-set-key (kbd "M-e s") 'tester-run-test-suite)
 
-;; Popwin
-(global-set-key (kbd "C-y") popwin:keymap)
+;; Helm
+(global-set-key (kbd "M-a") 'helm-M-x)
+(global-set-key (kbd "C-x C-m") 'helm-M-x)
+(global-set-key (kbd "M-R") 'helm-show-kill-ring)
+(global-set-key (kbd "C-x b") 'helm-mini)
+(global-set-key (kbd "C-x C-b") 'helm-buffers-list)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "C-h f") 'helm-apropos)
+(global-set-key (kbd "C-h r") 'helm-info-emacs)
+(global-set-key (kbd "C-h C-l") 'helm-locate-library)
+(global-set-key (kbd "M-w") 'helm-imenu)
+(global-set-key (kbd "C-o") 'helm-find-files)
+(global-set-key (kbd "M-g a") 'helm-ag)
+(global-set-key (kbd "C-c h") 'helm-command-prefix)
+(global-unset-key (kbd "C-x c"))
 
 (define-key process-menu-mode-map (kbd "C-k") 't-delete-process-at-point)
 

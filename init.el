@@ -11,6 +11,9 @@
 (require 'cask "/usr/local/share/emacs/site-lisp/cask.el")
 (cask-initialize)
 
+(require 'pallet)
+(pallet-mode t)
+
 (add-to-list 'load-path (expand-file-name "parts" user-emacs-directory))
 
 (require 'smartparens-prt)
@@ -29,13 +32,13 @@
 (require 'yasnippet-prt)
 (require 'which-key-prt)
 (require 'utils-prt)
-(require 'popwin-prt)
 (require 'writer-prt)
 (require 'custom-prt)
 (require 'org-prt)
 (require 'dired-prt)
 (require 'grep-prt)
 (require 'keybindings-prt)
+(require 'helm-prt)
 
 (provide 'init)
 
