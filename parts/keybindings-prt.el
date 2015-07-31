@@ -119,8 +119,6 @@
 
 (global-set-key (kbd "M-t") 'projectile-find-file)
 
-(global-set-key (kbd "C-x g") 'magit-status)
-
 (global-set-key (kbd "M-a") 'smex)
 
 (key-chord-mode +1)
@@ -217,6 +215,10 @@
 (global-unset-key (kbd "C-x c"))
 
 (define-key process-menu-mode-map (kbd "C-k") 't-delete-process-at-point)
+
+;; Magit
+(global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
 
 (provide 'keybindings-prt)
 
