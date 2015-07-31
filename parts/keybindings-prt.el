@@ -212,7 +212,7 @@
 (global-set-key (kbd "C-h C-l") 'helm-locate-library)
 (global-set-key (kbd "M-w") 'helm-imenu)
 (global-set-key (kbd "C-o") 'helm-find-files)
-(global-set-key (kbd "M-g a") 'helm-ag)
+(global-set-key (kbd "M-g a") 'helm-projectile-ag)
 (global-set-key (kbd "C-c h") 'helm-command-prefix)
 (global-unset-key (kbd "C-x c"))
 

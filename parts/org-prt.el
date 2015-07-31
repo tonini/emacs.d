@@ -12,7 +12,7 @@
   (interactive)
   (t-persp "@org"
            (let ((default-directory "~/Dropbox/org/"))
-             (find-file "notes.org"))))
+             (helm-projectile-find-file))))
 
 (add-to-list 'Info-default-directory-list "~/info")
 

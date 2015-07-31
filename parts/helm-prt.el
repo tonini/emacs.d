@@ -25,6 +25,7 @@
 ;;; Code:
 
 (require 'helm-config)
+(require 'helm-ag)
 (require 'helm-projectile)
 
 (define-key helm-command-map (kbd "o") 'helm-occur)
@@ -41,7 +42,8 @@
       helm-buffers-fuzzy-matching           t
       helm-move-to-line-cycle-in-source     t
       helm-ff-search-library-in-sexp        t
-      helm-ff-file-name-history-use-recentf t)
+      helm-ff-file-name-history-use-recentf t
+      helm-ag-fuzzy-match                   t)
 
 (substitute-key-definition 'find-tag 'helm-etags-select global-map)
 (setq projectile-completion-system 'helm)
