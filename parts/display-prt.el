@@ -79,14 +79,8 @@ want to use in the modeline *in lieu of* the original.")
 
 (add-hook 'after-change-major-mode-hook 'clean-mode-line)
 
-;; (set-display-table-slot standard-display-table 'vertical-border (make-glyph-code ?\s))
-
-(defun linum-format-func (line)
-  (let ((w (length (number-to-string (count-lines (point-min) (point-max))))))
-     (propertize (format (format "%%%dd " w) line) 'face 'linum)))
-
-(setq linum-format 'linum-format-func)
-(global-linum-mode t)
+(setq linum-format " %d ")
+(global-linum-mode)
 
 (eval
  '(set-display-table-slot standard-display-table
