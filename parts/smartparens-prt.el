@@ -1,10 +1,3 @@
-;;; smartparens-prt.el ---
-
-;;; Commentary:
-;;
-
-;;; Code:
-
 (require 'smartparens)
 
 (show-paren-mode t)
@@ -19,5 +12,3 @@
 (setq show-paren-delay 0)
 
 (provide 'smartparens-prt)
-
-;;; smartperns-prt.el ends here

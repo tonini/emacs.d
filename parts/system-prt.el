@@ -1,10 +1,3 @@
-;;; system-prt.el --- System setup
-
-;;; Commentary:
-;;
-
-;;; Code:
-
 ;; Use bin/bash as default shell for Emacs to work around PATH issues with zsh
 (setq shell-file-name "/usr/local/bin/zsh")
 
@@ -67,5 +60,3 @@
 (server-start)
 
 (provide 'system-prt)
-
-;;; system-prt.el ends here

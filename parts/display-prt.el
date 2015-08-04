@@ -1,10 +1,3 @@
-;;; display-prt.el --- Display setup
-
-;;; Commentary:
-;;
-
-;;; Code:
-
 (require 'cl)
 (require 'idle-highlight-mode)
 (require 'zoom-window)
@@ -103,5 +96,3 @@ want to use in the modeline *in lieu of* the original.")
       (set-face-attribute 'flycheck-warning nil :foreground "yellow" :underline nil)))
 
 (provide 'display-prt)
-
-;;; display-prt.el ends here

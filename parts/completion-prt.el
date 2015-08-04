@@ -1,10 +1,3 @@
-;;; completion-prt.el --- completion setup
-
-;;; Commentary:
-;;
-
-;;; Code:
-
 (require 'company)
 
 (eval-after-load "company"
@@ -21,5 +14,3 @@
      (define-key company-active-map (kbd "M-i") 'company-select-previous)))
 
 (provide 'completion-prt)
-
-;;; completion-prt.el ends here

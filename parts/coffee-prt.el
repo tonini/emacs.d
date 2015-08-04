@@ -1,10 +1,3 @@
-;;; coffee-prt.el --- CoffeeScript setup
-
-;;; Commentary:
-;;
-
-;;; Code:
-
 (require 'coffee-mode)
 
 (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
@@ -22,5 +15,3 @@
   (add-hook 'coffee-mode-hook 't-coffee-mode-defaults)))
 
 (provide 'coffee-prt)
-
-;;; coffee-prt.el ends here

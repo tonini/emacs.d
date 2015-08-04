@@ -1,10 +1,3 @@
-;; keybindings-prt.el --- Keybinding setup
-
-;;; Commentary:
-;;
-
-;;; Code:
-
 (global-unset-key (kbd "C-b")) ; backward-char
 (global-unset-key (kbd "C-f")) ; forward-char
 (global-unset-key (kbd "C-p")) ; previous-line
@@ -231,5 +224,3 @@
 
 
 (provide 'keybindings-prt)
-
-;;; keybindings-prt.el ends here

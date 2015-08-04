@@ -1,10 +1,3 @@
-;;; ruby-prt.el --- Ruby setup
-
-;;; Commentary:
-;;
-
-;;; Code:
-
 (require 'ruby-mode)
 (require 'inf-ruby)
 (require 'ruby-compilation)
@@ -36,5 +29,3 @@
      (add-hook 'ruby-mode-hook 't-ruby-mode-defaults)))
 
 (provide 'ruby-prt)
-
-;;; ruby-prt.el ends here

@@ -1,10 +1,3 @@
-;;; js-prt.el --- JavaScript setup
-
-;;; Commentary:
-;;
-
-;;; Code:
-
 (add-to-list 'load-path "~/Projects/karma.el/")
 
 (require 'js2-mode)
@@ -28,5 +21,3 @@
      (add-hook 'js2-mode-hook 't-js-mode-defaults)))
 
 (provide 'js-prt)
-
-;;; js-prt.el ends here

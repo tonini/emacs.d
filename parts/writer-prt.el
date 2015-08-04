@@ -1,10 +1,3 @@
-;;; writer-prt.el --- Functionality for nice writing
-
-;;; Commentary:
-;;
-
-;;; Code:
-
 (defun t-writer-mode ()
   (interactive)
   (markdown-mode)
@@ -25,5 +18,3 @@
   (company-mode +1))
 
 (provide 'writer-prt)
-
-;;; writer-prt.el ends here

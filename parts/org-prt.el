@@ -1,10 +1,3 @@
-;;; org-prt.el --- Org-Mode configurations
-
-;;; Commentary:
-;;
-
-;;; Code:
-
 (require 'org)
 (require 'org-present)
 
@@ -78,5 +71,3 @@
 (require 'ox-texinfo+)
 
 (provide 'org-prt)
-
-;;; org-prt.el ends here

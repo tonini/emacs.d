@@ -1,10 +1,3 @@
-;;; dired-prt.el --- custom dired setup
-
-;;; Commentary:
-;;
-
-;;; Code:
-
 (require 'dired-x)
 
 ;; allow dired to be able to delete or copy a whole dir.
@@ -62,5 +55,3 @@ Version 2015-06-12"
     )))
 
 (provide 'dired-prt)
-
-;;; completion-prt.el ends here

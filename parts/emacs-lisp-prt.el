@@ -1,10 +1,3 @@
-;;; emacs-lisp-prt.el --- Elixir setup
-
-;;; Commentary:
-;;
-
-;;; Code:
-
 (add-to-list 'load-path "~/Projects/overseer.el/")
 (require 'overseer)
 
@@ -41,5 +34,3 @@
   (add-hook hook 'turn-on-elisp-slime-nav-mode))
 
 (provide 'emacs-lisp-prt)
-
-;;; emacs-lisp-prt.el ends here

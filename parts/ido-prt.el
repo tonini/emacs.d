@@ -1,10 +1,3 @@
-;;; ido-prt.el --- Ido setup
-
-;;; Commentary:
-;;
-
-;;; Code:
-
 (require 'ido)
 (require 'flx-ido)
 
@@ -39,5 +32,3 @@
 (add-hook 'ido-setup-hook 'ido-my-keys)
 
 (provide 'ido-prt)
-
-;;; ido-prt.el ends here

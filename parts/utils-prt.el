@@ -1,10 +1,3 @@
-;;; utils-prt.el --- Useful functions
-
-;;; Commentary:
-;;
-
-;;; Code:
-
 (require 'url)
 
 (defun t-comment-or-uncomment-region-or-line ()
@@ -214,5 +207,3 @@ file of a buffer in an external program."
           (add-to-list 'name-and-pos (cons name position))))))))
 
 (provide 'utils-prt)
-
-;;; utils-prt.el ends here
