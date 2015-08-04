@@ -160,7 +160,7 @@
 (global-set-key (kbd "C-c e r") 'eval-region)
 (global-set-key (kbd "C-c e l") 'eval-last-sexp)
 
-(global-set-key (kbd "C-x p") 'projectile-persp-switch-project)
+(global-set-key (kbd "C-x p") 't-project-ido-find-project)
 (global-set-key (kbd "C-c C-k") 't-comment-or-uncomment-region-or-line)
 
 ;; Perspective
@@ -219,6 +219,16 @@
 ;; Magit
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
+
+(defun alchemist-window-quit ()
+  "Quit every alchemist based window."
+  (interactive)
+  (let ((window (get-buffer-window alchemist-help-buffer-name)))
+    (when window
+      (quit-window nil window))))
+
+(global-set-key (kbd "C-c q") #'alchemist-window-quit)
+
 
 (provide 'keybindings-prt)
 

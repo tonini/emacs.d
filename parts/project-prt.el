@@ -42,18 +42,19 @@
 (defun t-persp-kill-all ()
   "Kill all existing perspectives."
   (interactive)
+  (t-persp "main")
   (cl-loop for persp-name in (persp-names) do
            (when (not (string= persp-name "main"))
              (persp-kill persp-name))))
 
 (defun t-project-ido-find-project ()
   (interactive)
-  (let* ((project-name (ido-completing-read "Project: "
+  (let* ((project-name (completing-read "Project: "
                                             (directory-files t-project-location nil "^[^.]")))
          (project-path (concat t-project-location project-name)))
     (t-persp project-name)
     (let ((default-directory project-path))
-      (textmate-goto-file))))
+      (projectile-find-file))))
 
 (defun persp-format-name (name)
   "Format the perspective name given by NAME for display in `persp-modestring'."
