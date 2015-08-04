@@ -11,6 +11,7 @@
 (eval-after-load 'js2-mode
   '(progn
      (defun t-js-mode-defaults ()
+       (setq tab-width 2)
        (setq js2-basic-offset 2)
        (smartparens-mode +1)
        (local-unset-key (kbd "M-j")) ;; I use M-j for backward-char globaly

@@ -54,6 +54,7 @@
 (depends-on "smartparens")
 (depends-on "smex")
 (depends-on "textmate")
+(depends-on "web-mode")
 (depends-on "which-key")
 (depends-on "writeroom-mode")
 (depends-on "yaml-mode")

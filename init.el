@@ -39,6 +39,7 @@
 (require 'grep-prt)
 (require 'keybindings-prt)
 (require 'helm-prt)
+(require 'html-prt)
 
 (provide 'init)
 
