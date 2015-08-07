@@ -24,6 +24,8 @@
   (tester-init-test-run #'overseer-test-file "test.el$")
   (tester-init-test-suite-run #'overseer-test))
 
+(sp-local-pair 'emacs-lisp-mode "`" "'")
+
 ;; disable checkdoc for emacs lisp, it's no annoying
 (with-eval-after-load 'flycheck
   (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc)))
