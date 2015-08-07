@@ -212,15 +212,11 @@
 ;; Magit
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
+(global-set-key (kbd "C-x M-l") 'magit-log)
+(global-set-key (kbd "C-x M-b") 'magit-blame)
 
-(defun alchemist-window-quit ()
-  "Quit every alchemist based window."
-  (interactive)
-  (let ((window (get-buffer-window alchemist-help-buffer-name)))
-    (when window
-      (quit-window nil window))))
-
-(global-set-key (kbd "C-c q") #'alchemist-window-quit)
-
+;; swap `transpose-chars' key with `transpose-lines'
+(global-set-key "\C-t" #'transpose-lines)
+(define-key ctl-x-map "\C-t" #'transpose-chars)
 
 (provide 'keybindings-prt)

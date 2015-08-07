@@ -7,5 +7,6 @@
 
 ;; Set the time delay (in seconds) for the which-key popup to appear.
 (setq which-key-idle-delay 0.1)
+(setq which-key-show-prefix 'left)
 
 (provide 'which-key-prt)
