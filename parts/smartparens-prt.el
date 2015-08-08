@@ -1,9 +1,5 @@
 (require 'smartparens)
 
-(show-paren-mode t)
-(smartparens-global-mode t)
-(show-smartparens-global-mode nil)
-
 ;; Do not highlight paren area
 (setq sp-highlight-pair-overlay nil)
 (setq sp-highlight-wrap-overlay nil)

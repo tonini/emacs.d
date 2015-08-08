@@ -2,6 +2,7 @@
 (source melpa)
 (source org)
 
+(depends-on "ack")
 (depends-on "browse-kill-ring")
 (depends-on "cask")
 (depends-on "coffee-mode")
@@ -34,6 +35,7 @@
 (depends-on "magit")
 (depends-on "markdown-mode")
 (depends-on "marmalade-client")
+(depends-on "mmm-mode")
 (depends-on "org")
 (depends-on "org-present")
 (depends-on "package-build")
