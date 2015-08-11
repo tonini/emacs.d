@@ -46,4 +46,25 @@
 (add-hook 'elixir-mode-hook  't-elixir-mode-hook)
 (add-hook 'erlang-mode-hook 't-erlang-mode-hook)
 
+;; Display alchemist buffers always at the bottom
+;; Source: http://www.lunaryorn.com/2015/04/29/the-power-of-display-buffer-alist.html
+(add-to-list 'display-buffer-alist
+             `(,(rx bos (or "*alchemist test report*"
+                            "*alchemist mix*"
+                            "*alchemist help*"))
+                    (display-buffer-reuse-window
+                     display-buffer-in-side-window)
+               (reusable-frames . visible)
+               (side            . right)
+               (window-width   . 0.5)))
+
+(defun alchemist-quit-displayed-windows ()
+  "Quit side windows of the current frame."
+  (interactive)
+  (dolist (window (list (get-buffer-window "*alchemist test report*")
+                        (get-buffer-window "*alchemist mix*")
+                        (get-buffer-window "*alchemist help*")))
+    (if window
+        (quit-window nil window))))
+
 (provide 'elixir-prt)
