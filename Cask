@@ -36,6 +36,7 @@
 (depends-on "markdown-mode")
 (depends-on "marmalade-client")
 (depends-on "mmm-mode")
+(depends-on "multiple-cursors")
 (depends-on "org")
 (depends-on "org-present")
 (depends-on "package-build")
