@@ -11,7 +11,9 @@
 
 (add-hook 'org-mode-hook
           (lambda ()
-            (local-set-key "\M-a" 'smex)))
+            (local-set-key "\M-a" 'smex)
+            (local-set-key "\C-a" 'windmove-left)
+            (local-set-key "\C-d" 'windmove-right)))
 
 ;; Fontify the source code inside org-mode source blocks
 (setq org-src-fontify-natively t)
