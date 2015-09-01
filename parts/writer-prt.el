@@ -1,3 +1,4 @@
+;;;###autoload
 (defun t-writer-mode ()
   (interactive)
   (markdown-mode)
@@ -8,6 +9,7 @@
   (turn-off-smartparens-mode)
   (company-mode -1))
 
+;;;###autoload
 (defun t-disable-writer-mode ()
   (interactive)
   (linum-mode t)

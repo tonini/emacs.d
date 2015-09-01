@@ -1,6 +1,7 @@
 (require 'org)
 (require 'org-present)
 
+;;;###autoload
 (defun t-org-persp ()
   (interactive)
   (t-persp "@org"
@@ -68,8 +69,5 @@
                  (org-remove-inline-images)
                  (org-present-show-cursor)
                  (org-present-read-write)))))
-
-(load-file "~/Projects/emacs.d/vendor/ox-texinfo+.el")
-(require 'ox-texinfo+)
 
 (provide 'org-prt)

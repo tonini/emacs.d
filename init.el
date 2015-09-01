@@ -20,7 +20,6 @@
 (require 'magit-prt)
 (require 'programming-prt)
 (require 'project-prt)
-(require 'ido-prt)
 (require 'completion-prt)
 (require 'system-prt)
 (require 'display-prt)
