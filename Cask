@@ -3,6 +3,7 @@
 (source org)
 
 (depends-on "ack")
+(depends-on "ag")
 (depends-on "browse-kill-ring")
 (depends-on "cask")
 (depends-on "coffee-mode")
@@ -39,6 +40,7 @@
 (depends-on "perspective")
 (depends-on "pkg-info")
 (depends-on "projectile")
+(depends-on "projectile-rails")
 (depends-on "rainbow-delimiters")
 (depends-on "rainbow-mode")
 (depends-on "rspec-mode")
@@ -52,7 +54,6 @@
 (depends-on "smex")
 (depends-on "textmate")
 (depends-on "web-mode")
-(depends-on "which-key")
 (depends-on "writeroom-mode")
 (depends-on "yaml-mode")
 (depends-on "yari")
