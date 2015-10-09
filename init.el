@@ -51,7 +51,6 @@
 (require 'js-prt)
 (require 'coffee-prt)
 (require 'yasnippet-prt)
-(require 'which-key-prt)
 (require 'utils-prt)
 (require 'writer-prt)
 (require 'custom-prt)
