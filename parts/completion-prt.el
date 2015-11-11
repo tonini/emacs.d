@@ -11,6 +11,7 @@
 
      ;; Keybindings
      (define-key company-active-map (kbd "M-k") 'company-select-next)
-     (define-key company-active-map (kbd "M-i") 'company-select-previous)))
+     (define-key company-active-map (kbd "M-i") 'company-select-previous)
+     (define-key company-active-map (kbd "TAB") 'company-complete-selection)))
 
 (provide 'completion-prt)
