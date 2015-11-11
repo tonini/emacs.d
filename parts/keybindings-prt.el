@@ -199,6 +199,10 @@
 (global-unset-key (kbd "C-x c"))
 
 (define-key process-menu-mode-map (kbd "C-k") 't-delete-process-at-point)
+(define-key minibuffer-local-map (kbd "M-v") 'yank)
+
+;; Ag
+(global-set-key (kbd "C-x M-a") 'ag)
 
 ;; Magit
 (global-set-key (kbd "C-x g") 'magit-status)
