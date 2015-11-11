@@ -7,10 +7,14 @@
 (define-key helm-command-map (kbd "SPC") 'helm-all-mark-rings)
 (define-key helm-map (kbd "M-k") 'helm-next-line)
 (define-key helm-map (kbd "M-i") 'helm-previous-line)
+(define-key helm-map (kbd "M-v") 'yank)
 (define-key helm-find-files-map (kbd "M-k") 'helm-next-line)
 (define-key helm-find-files-map (kbd "M-i") 'helm-previous-line)
+(define-key helm-find-files-map (kbd "M-v") 'yank)
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
 (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
+
+(define-key minibuffer-local-map (kbd "C-c C-l") 'helm-minibuffer-history)
 
 (setq helm-split-window-in-side-p           t
       helm-buffers-fuzzy-matching           t
