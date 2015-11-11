@@ -6,7 +6,7 @@
 (require 'alchemist)
 
 (setq alchemist-goto-elixir-source-dir "~/Projects/elixir/")
-(setq alchemist-goto-erlang-source-dir "~/Projects/otp_src_17.4/")
+(setq alchemist-goto-erlang-source-dir "~/Projects/otp/")
 
 (defun t-elixir-mode-hook ()
   (yas/minor-mode +1)
