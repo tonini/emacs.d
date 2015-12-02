@@ -11,7 +11,7 @@
 
 (require 'ls-lisp)
 (setq ls-lisp-use-insert-directory-program t)
-(setq insert-directory-program "/usr/local/Cellar/coreutils/8.23_1/libexec/gnubin/ls")
+(setq insert-directory-program "/usr/local/Cellar/coreutils/8.24/libexec/gnubin/ls")
 
 (load (expand-file-name "~/.emacs.d/vendor/dired-sort-map.el"))
 
