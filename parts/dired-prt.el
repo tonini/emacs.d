@@ -51,7 +51,6 @@ Version 2015-06-12"
   (cond
    ((string-equal system-type "darwin") (shell-command "open ."))
    ((string-equal system-type "gnu/linux")
-    (let ((process-connection-type nil)) (start-process "" nil "xdg-open" "."))
-    )))
+    (let ((process-connection-type nil)) (start-process "" nil "xdg-open" ".")))))
 
 (provide 'dired-prt)
