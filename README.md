@@ -35,6 +35,12 @@ the structure is quite straightforward.
 
 * Emacs 24 or greater.
 * [Cask](https://github.com/cask/cask) to manage dependencies.
+* [Tester](https://github.com/tonini/tester.el) Run all tests through the same pipeline.
+* [Karma](https://github.com/tonini/karma.el) Karma Test Runner Emacs Integration.
+* [Coreutils](http://rudix.org/packages/coreutils.html) Basic file, shell and text manipulation utilities of the GNU operating system.
+
+  You need to update the `insert-directory-program` variable to the `ls` command after that. You will find the
+  variable inside the [parts/dired-prt.el](parts/dired-prt.el) file.
 
 ## Installation
 
