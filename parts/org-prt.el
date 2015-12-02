@@ -6,22 +6,22 @@
   (interactive)
   (t-persp "@org"
            (let ((default-directory "~/Dropbox/org/"))
-             (helm-projectile-find-file))))
+             (call-interactively 'helm-find-files))))
 
 (add-to-list 'Info-default-directory-list "~/info")
 
-(add-hook 'org-mode-hook
-          (lambda ()
-            (local-set-key "\M-a" 'smex)
-            (local-set-key "\C-a" 'windmove-left)
-            (local-set-key "\C-d" 'windmove-right)))
+(defun t-org-default-keybindings ()
+  (define-key org-mode-map (kbd "M-a") 'helm-M-x)
+  (define-key org-mode-map (kbd "C-a") 'windmove-left)
+  (define-key org-mode-map (kbd "C-d") 'windmove-right))
+
+(add-hook 'org-mode-hook 't-org-default-keybindings)
 
 ;; Fontify the source code inside org-mode source blocks
 (setq org-src-fontify-natively t)
 
 (eval-after-load "org-present"
   '(progn
-
      ;; My custom overlays function
      (defun org-present-add-overlays ()
        "Add overlays for this mode."
