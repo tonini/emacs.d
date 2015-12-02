@@ -214,4 +214,7 @@
 (global-set-key "\C-t" #'transpose-lines)
 (define-key ctl-x-map "\C-t" #'transpose-chars)
 
+;; Custom interactive functions
+(global-set-key (kbd "C-x M-o") 't-open-in-desktop)
+
 (provide 'keybindings-prt)
