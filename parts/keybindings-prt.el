@@ -217,4 +217,8 @@
 ;; Custom interactive functions
 (global-set-key (kbd "C-x M-o") 't-open-in-desktop)
 
+;; Better bindings for scrolling in other window
+(global-set-key (kbd "C-M-n") 'scroll-other-window)
+(global-set-key (kbd "C-M-p") 'scroll-other-window-down)
+
 (provide 'keybindings-prt)
