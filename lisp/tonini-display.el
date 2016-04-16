@@ -95,4 +95,4 @@ want to use in the modeline *in lieu of* the original.")
     '(progn
       (set-face-attribute 'flycheck-warning nil :foreground "yellow" :underline nil)))
 
-(provide 'display-prt)
+(provide 'tonini-display-prt)

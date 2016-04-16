@@ -135,26 +135,9 @@
 (global-set-key (kbd "C-h e k") 'find-function-on-key)
 (global-set-key (kbd "C-h e l") 'find-library)
 
-(defvar lisp-eval-map)
-(define-prefix-command 'lisp-eval-map)
-
-(global-set-key (kbd "C-c e") 'lisp-eval-map)
-
-(global-set-key (kbd "C-c e b") 'eval-buffer)
-(global-set-key (kbd "C-c e r") 'eval-region)
-(global-set-key (kbd "C-c e l") 'eval-last-sexp)
-
 (global-set-key (kbd "C-x p") 't-project-ido-find-project)
 (global-set-key (kbd "C-c C-k") 't-comment-or-uncomment-region-or-line)
 
-;; Perspective
-
-(global-set-key (kbd "C-p s") 'persp-switch)
-(global-set-key (kbd "C-p p") 't-persp-last)
-(global-set-key (kbd "C-p e") 't-emacs-conf-persp)
-(global-set-key (kbd "C-p o") 't-org-persp)
-(global-set-key (kbd "C-p d") 'persp-kill)
-(global-set-key (kbd "C-p x") 'persp-kill)
 (global-set-key (kbd "C-_") 'company-complete)
 
 (global-set-key (kbd "C-x b") 'ido-switch-buffer)
@@ -173,14 +156,7 @@
 
 ;; Test bindings
 
-(defvar testing-map)
-(define-prefix-command 'testing-map)
-
-(global-unset-key (kbd "M-e"))
-(global-set-key (kbd "M-e") 'testing-map)
-
-(global-set-key (kbd "M-e e") 'tester-run-test-file)
-(global-set-key (kbd "M-e s") 'tester-run-test-suite)
+(global-set-key (kbd "M-e") 'tester-run-test-file)
 
 ;; Helm
 (global-set-key (kbd "M-a") 'helm-M-x)
@@ -223,4 +199,4 @@
 (global-set-key (kbd "C-M-n") 'scroll-other-window)
 (global-set-key (kbd "C-M-p") 'scroll-other-window-down)
 
-(provide 'keybindings-prt)
+(provide 'tonini-keybindings)

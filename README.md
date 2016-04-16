@@ -8,39 +8,15 @@ together my own custom emacs stack.
 This setup is slim and management and should give any other coder who consider or always wanted to
 create an own custom emacs setting, a good start.
 
-For package dependency managagement I use [Cask](https://github.com/cask/cask), because it's great. As you can see in the directory tree below,
-the structure is quite straightforward.
+It’s a single big `init.el`, containing only `use-package` declarations for all the built-in and 3rd party packages I use. These declarations have all the configuration and setup for the specific packages.
 
-```shell
-├── Cask
-├── README.md
-├── init.el
-├── parts
-│   ├── coffee-prt.el
-│   ├── completion-prt.el
-│   ├── custom-prt.el
-│   ├── display-prt.el
-│   ├── elixir-prt.el
-│   ├── emacs-lisp-prt.el
-│   ├── ...
-│   ├── ...
-│   ├── ...
-│   └── ...
-├── snippets
-├── test
-└── themes
-```
+There’s also `lisp/` which has my own personal extensions and libraries with custom functions, etc. These libraries are loaded like normal packages with `use-package` in `init.el.`
 
 ## Requirements
 
 * Emacs 24 or greater.
-* [Cask](https://github.com/cask/cask) to manage dependencies.
 * [Tester](https://github.com/tonini/tester.el) Run all tests through the same pipeline.
 * [Karma](https://github.com/tonini/karma.el) Karma Test Runner Emacs Integration.
-* [Coreutils](http://rudix.org/packages/coreutils.html) Basic file, shell and text manipulation utilities of the GNU operating system.
-
-  You need to update the `insert-directory-program` variable to the `ls` command after that. You will find the
-  variable inside the [parts/dired-prt.el](parts/dired-prt.el) file.
 
 ## Installation
 
@@ -48,13 +24,6 @@ To install, clone this repo to `~/.emacs.d`, i.e. ensure that the `init.el` cont
 
 ```shell
 git clone https://github.com/tonini/emacs.d.git ~/.emacs.d
-```
-
-To install all the dependencies:
-
-```shell
-$ cd ~/.emacs.d
-$ cask install
 ```
 
 ## Support
@@ -75,7 +44,7 @@ Contributions are very welcome!
 
 ## License
 
-Copyright © 2015 Samuel Tonini
+Copyright © 2016 Samuel Tonini
 
 Distributed under the GNU General Public License, version 3
 

@@ -221,4 +221,4 @@ file of a buffer in an external program."
           (add-to-list 'symbol-names name)
           (add-to-list 'name-and-pos (cons name position))))))))
 
-(provide 'utils-prt)
+(provide 'tonini-utils)
