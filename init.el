@@ -33,7 +33,7 @@
 ;; Please don't load outdated byte code
 (setq load-prefer-newer t)
 
-(defvar tonini-temporary-file-directory (expand-file-name "~/.emacs.d/tmp"))
+(setq temporary-file-directory (expand-file-name "~/.emacs.d/tmp"))
 (setq backup-directory-alist
       `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms
