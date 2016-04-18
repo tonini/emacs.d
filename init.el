@@ -43,6 +43,8 @@
 (require 'tonini-utils)
 (require 'tonini-keybindings)
 
+;; Display setup
+
 (if window-system
     (progn
       (setq frame-title-format '(buffer-file-name "%f" ("%b")))
@@ -51,23 +53,25 @@
       (scroll-bar-mode -1))
   (menu-bar-mode -1))
 
-(when (fboundp 'tool-bar-mode)
-  (tool-bar-mode -1))
-(blink-cursor-mode -1)
-(setq-default cursor-type '(bar . 2))
-(global-hl-line-mode t)
-(delete-selection-mode 1)
-(transient-mark-mode 1)
-(show-paren-mode 1)
-(column-number-mode 1)
 (setq use-dialog-box nil
       visible-bell t
       echo-keystrokes 0.1
       inhibit-startup-message t
       truncate-partial-width-windows nil
-      gnuserv-frame (car (frame-list)))
-(setq linum-format " %d ")
+      gnuserv-frame (car (frame-list))
+      linum-format " %d ")
+
+(when (fboundp 'tool-bar-mode)
+  (tool-bar-mode -1))
+(blink-cursor-mode -1)
+(global-hl-line-mode t)
+(delete-selection-mode 1)
+(transient-mark-mode 1)
+(show-paren-mode 1)
+(column-number-mode 1)
 (global-linum-mode)
+
+(setq-default cursor-type '(bar . 2))
 
 (eval
  '(set-display-table-slot standard-display-table
@@ -82,6 +86,8 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (load-theme 'ujelly t)
 
+;; System setup
+
 ;; `gc-cons-threshold'
 
 ;; http://www.gnu.org/software/emacs/manual/html_node/elisp/Garbage-Collection.html
@@ -90,14 +96,11 @@
 ;;
 (setq gc-cons-threshold 20000000)
 
-(setq delete-old-versions t)
-(setq make-backup-files nil)
-(setq create-lockfiles nil)
-
-(setq auto-save-file-name-transforms
-      `((".*" ,temporary-file-directory t)))
-
-(setq ring-bell-function 'ignore)
+(setq delete-old-versions t
+      make-backup-files nil
+      create-lockfiles nil
+      ring-bell-function 'ignore
+      auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 
 (defun copy-from-osx ()
   (shell-command-to-string "pbpaste"))
@@ -111,7 +114,7 @@
 (setq interprogram-cut-function 'paste-to-osx)
 (setq interprogram-paste-function 'copy-from-osx)
 
-(server-start)
+(server-start) ;; Allow this Emacs process to be a server for client processes.
 
 ;; Bootstrap `use-package'
 (require 'package)
