@@ -110,7 +110,7 @@
 (global-set-key (kbd "C-M-j")  'textmate-shift-left)
 (global-set-key (kbd "C-c C-w") 'whitespace-mode)
 
-(global-set-key (kbd "M-t") 'projectile-find-file)
+(global-set-key (kbd "M-t") 'helm-projectile-find-file)
 
 (global-set-key (kbd "C-c c") 'org-capture)
 (global-set-key (kbd "C-x M-r") 'ruby-compilation-this-buffer)
@@ -138,7 +138,7 @@
 (global-set-key (kbd "C-x p") 't-project-ido-find-project)
 (global-set-key (kbd "C-c C-k") 't-comment-or-uncomment-region-or-line)
 
-(global-set-key (kbd "C-_") 'company-complete)
+(global-set-key (kbd "C-/") 'company-complete)
 
 (global-set-key (kbd "C-x b") 'ido-switch-buffer)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
@@ -171,7 +171,6 @@
 (global-set-key (kbd "M-w") 'helm-imenu)
 (global-set-key (kbd "C-o") 'helm-find-files)
 (global-set-key (kbd "M-g a") 'helm-projectile-ag)
-(global-set-key (kbd "C-c h") 'helm-command-prefix)
 (global-unset-key (kbd "C-x c"))
 
 (define-key process-menu-mode-map (kbd "C-k") 't-delete-process-at-point)

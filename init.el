@@ -33,6 +33,24 @@
 ;; Please don't load outdated byte code
 (setq load-prefer-newer t)
 
+;; Bootstrap `use-package'
+(require 'package)
+(setq package-enable-at-startup nil)
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/"))
+(package-initialize)
+
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+(require 'diminish)
+(require 'bind-key)
+
+;; Customization
+(defconst tonini-custom-file (locate-user-emacs-file "customize.el")
+  "File used to store settings from Customization UI.")
+
 (setq temporary-file-directory (expand-file-name "~/.emacs.d/tmp"))
 (setq backup-directory-alist
       `((".*" . ,temporary-file-directory)))
@@ -43,48 +61,62 @@
 (require 'tonini-utils)
 (require 'tonini-keybindings)
 
-;; Display setup
+(defun my-minibuffer-setup-hook ()
+  (setq gc-cons-threshold most-positive-fixnum))
 
-(if window-system
-    (progn
-      (setq frame-title-format '(buffer-file-name "%f" ("%b")))
-      (tooltip-mode -1)
-      (mouse-wheel-mode t)
-      (scroll-bar-mode -1))
-  (menu-bar-mode -1))
+(defun my-minibuffer-exit-hook ()
+  (setq gc-cons-threshold 800000))
 
-(setq use-dialog-box nil
-      visible-bell t
-      echo-keystrokes 0.1
-      inhibit-startup-message t
-      truncate-partial-width-windows nil
-      gnuserv-frame (car (frame-list))
-      linum-format " %d ")
+(add-hook 'minibuffer-setup-hook #'my-minibuffer-setup-hook)
+(add-hook 'minibuffer-exit-hook #'my-minibuffer-exit-hook)
 
+;;; User interface
+
+;; Get rid of tool bar, menu bar and scroll bars.  On OS X we preserve the menu
+;; bar, since the top menu bar is always visible anyway, and we'd just empty it
+;; which is rather pointless.
 (when (fboundp 'tool-bar-mode)
   (tool-bar-mode -1))
-(blink-cursor-mode -1)
-(global-hl-line-mode t)
+(when (and (eq system-type 'darwin) (fboundp 'menu-bar-mode))
+  (menu-bar-mode -1))
+(when (fboundp 'scroll-bar-mode)
+  (scroll-bar-mode -1))
+
+(set-default 'truncate-lines t)
+
 (delete-selection-mode 1)
 (transient-mark-mode 1)
-(show-paren-mode 1)
-(column-number-mode 1)
+;; No blinking and beeping, no startup screen, no scratch message and short
+;; Yes/No questions.
+(blink-cursor-mode 1)
+(setq ring-bell-function #'ignore
+      inhibit-startup-screen t
+      echo-keystrokes 0.1
+      linum-format " %d"
+      initial-scratch-message "Howdy Sam!\n")
+(fset 'yes-or-no-p #'y-or-n-p)
+;; Opt out from the startup message in the echo area by simply disabling this
+;; ridiculously bizarre thing entirely.
+(fset 'display-startup-echo-area-message #'ignore)
+
 (global-linum-mode)
 
-(setq-default cursor-type '(bar . 2))
+(set-face-attribute 'default nil
+                    :family "Source Code Pro" :height 160)
+(set-face-attribute 'variable-pitch nil
+                    :family "Fira Sans" :height 140 :weight 'regular)
 
-(eval
- '(set-display-table-slot standard-display-table
-                          'vertical-border
-                          (make-glyph-code ?┃)))
+(set-frame-parameter nil 'fullscreen 'fullboth)
 
-(defalias 'yes-or-no-p 'y-or-n-p)
-
-(setq inhibit-startup-screen t)
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-(load-theme 'ujelly t)
+
+;; utf-8 all the things
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(set-selection-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
 
 ;; System setup
 
@@ -116,22 +148,21 @@
 
 (server-start) ;; Allow this Emacs process to be a server for client processes.
 
-;; Bootstrap `use-package'
-(require 'package)
-(setq package-enable-at-startup nil)
-(add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/"))
-(package-initialize)
+(use-package page-break-lines           ; Turn page breaks into lines
+  :ensure t
+  :init (global-page-break-lines-mode)
+  :diminish page-break-lines-mode)
 
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-
-(require 'diminish)
-(require 'bind-key)
-
-(eval-and-compile
-  (add-to-list 'load-path (expand-file-name "vendor" user-emacs-directory)))
+(use-package cus-edit
+  :defer t
+  :config
+  (setq custom-file tonini-custom-file
+        custom-buffer-done-kill nil            ; Kill when existing
+        custom-buffer-verbose-help nil         ; Remove redundant help text
+        ;; Show me the real variable name
+        custom-unlispify-tag-names nil
+        custom-unlispify-menu-entries nil)
+  :init (load tonini-custom-file 'no-error 'no-message))
 
 (use-package smartparens
   :ensure t
@@ -144,6 +175,10 @@
   :config
   (require 'smartparens-config)
   (setq sp-autoskip-closing-pair 'always)
+  :bind
+  (:map smartparens-mode-map
+	("C-c s u" . sp-unwrap-sexp)
+	("C-c s w" . sp-rewrap-sexp))
   :diminish (smartparens-mode))
 
 (use-package ido
@@ -159,7 +194,7 @@
   :ensure t
   :defer t
   :init
-  (dolist (hook '(text-mode-hook prog-mode-hook))
+  (dolist (hook '(text-mode-hook prog-mode-hook emacs-lisp-mode-hook))
     (add-hook hook #'rainbow-delimiters-mode)))
 
 (use-package hi-lock
@@ -180,11 +215,14 @@
   :ensure t
   :init (global-company-mode)
   :config
-  (setq company-tooltip-align-annotations t
-	company-idle-delay 0.3
-        company-tooltip-limit 10
-        company-minimum-prefix-length 2
-        company-tooltip-flip-when-above t)
+  (progn
+    (delete 'company-dabbrev company-backends)
+    (setq company-tooltip-align-annotations t
+	  company-tooltip-minimum-width 27
+	  company-idle-delay 0.3
+	  company-tooltip-limit 10
+	  company-minimum-prefix-length 2
+	  company-tooltip-flip-when-above t))
   :bind (:map company-active-map
               ("M-k" . company-select-next)
               ("M-i" . company-select-previous)
@@ -264,6 +302,81 @@
   :init (setq helm-ag-insert-at-point 'symbol
               helm-ag-command-option "--path-to-agignore ~/.agignore"))
 
+(use-package helm-info
+  :ensure helm
+  :bind (([remap info] . helm-info-at-point)
+         ("C-c h e"    . helm-info-emacs))
+  :config
+  ;; Also lookup symbols in the Emacs manual
+  (add-to-list 'helm-info-default-sources
+               'helm-source-info-emacs))
+
+(use-package helm-flycheck              ; Helm frontend for Flycheck errors
+  :ensure t
+  :defer t
+  :after flycheck)
+
+(use-package winner                     ; Undo and redo window configurations
+  :init (winner-mode))
+
+(use-package desktop                    ; Save buffers, windows and frames
+  :disabled t
+  :init (desktop-save-mode)
+  :config
+  ;; Save desktops a minute after Emacs was idle.
+  (setq desktop-auto-save-timeout 60)
+
+  ;; Don't save Magit and Git related buffers
+  (dolist (mode '(magit-mode magit-log-mode))
+    (add-to-list 'desktop-modes-not-to-save mode))
+  (add-to-list 'desktop-files-not-to-save (rx bos "COMMIT_EDITMSG")))
+
+
+(use-package multiple-cursors           ; Edit text with multiple cursors
+  :ensure t
+  :bind (("C-c o <SPC>" . mc/vertical-align-with-space)
+         ("C-c o a"     . mc/vertical-align)
+         ("C-c o e"     . mc/mark-more-like-this-extended)
+         ("C-c o h"     . mc/mark-all-like-this-dwim)
+         ("C-c o l"     . mc/edit-lines)
+         ("C-c o n"     . mc/mark-next-like-this)
+         ("C-c o p"     . mc/mark-previous-like-this)
+         ("C-c o r"     . vr/mc-mark)
+         ("C-c o C-a"   . mc/edit-beginnings-of-lines)
+         ("C-c o C-e"   . mc/edit-ends-of-lines)
+         ("C-c o C-s"   . mc/mark-all-in-region))
+  :config
+  (setq mc/mode-line
+        ;; Simplify the MC mode line indicator
+        '(:propertize (:eval (concat " " (number-to-string (mc/num-cursors))))
+                      face font-lock-warning-face)))
+
+;; (use-package autorevert                 ; Auto-revert buffers of changed files
+;;   :init (global-auto-revert-mode)
+;;   :config
+;;   (setq auto-revert-verbose nil         ; Shut up, please!
+;;         ;; Revert Dired buffers, too
+;;         global-auto-revert-non-file-buffers t)
+
+  ;; (when (eq system-type 'darwin)
+  ;;   ;; File notifications aren't supported on OS X
+  ;;   (setq auto-revert-use-notify nil))
+  ;; :diminish (auto-revert-mode))
+
+(use-package subword                    ; Subword/superword editing
+  :defer t
+  :diminish subword-mode)
+
+(use-package ibuffer-vc                 ; Group buffers by VC project and status
+  :disabled t
+  :ensure t
+  :defer t
+  :init (add-hook 'ibuffer-hook
+                  (lambda ()
+                    (ibuffer-vc-set-filter-groups-by-vc-root)
+                    (unless (eq ibuffer-sorting-mode 'alphabetic)
+                      (ibuffer-do-sort-by-alphabetic)))))
+
 (use-package projectile
   :ensure t
   :bind (("C-x p" . projectile-persp-switch-project))
@@ -273,6 +386,11 @@
   (helm-projectile-on)
   (setq projectile-enable-caching nil)
   :diminish (projectile-mode))
+
+(use-package ibuffer-projectile         ; Group buffers by Projectile project
+  :ensure t
+  :defer t
+  :init (add-hook 'ibuffer-hook #'ibuffer-projectile-set-filter-groups))
 
 (use-package persp-projectile
   :ensure t
@@ -303,7 +421,6 @@ Has no effect when `persp-show-modestring' is nil."
 (use-package elixir-mode
   :load-path "~/Projects/emacs-elixir/"
   :config (progn
-	    (yas-minor-mode +1)
 	    (defun my-elixir-do-end-close-action (id action context)
 	      (when (eq action 'insert)
 		(newline-and-indent)
@@ -321,7 +438,7 @@ Has no effect when `persp-show-modestring' is nil."
   :defer t
   :config
   (setq yas-snippet-dirs "~/.emacs.d/snippets")
-  (yas-global-mode +1)
+  (yas-global-mode 1)
   :diminish (yas-minor-mode . " YS"))
 
 (use-package alchemist
@@ -355,7 +472,9 @@ Has no effect when `persp-show-modestring' is nil."
 
 (use-package erlang
   :ensure t
-  :bind (:map erlang-mode-map ("M-," . alchemist-goto-jump-back)))
+  :bind (:map erlang-mode-map ("M-," . alchemist-goto-jump-back))
+  :config
+  (setq erlang-indent-level 2))
 
 (use-package enh-ruby-mode
   :ensure t
@@ -402,6 +521,74 @@ Has no effect when `persp-show-modestring' is nil."
 (use-package f
   :ensure t)
 
+(use-package solarized-theme
+  :ensure t
+  :defer t
+  :init (load-theme 'solarized-dark t)
+  :config
+  ;; make the fringe stand out from the background
+  (setq solarized-distinct-fringe-background t)
+
+  ;; Don't change the font for some headings and titles
+  (setq solarized-use-variable-pitch nil)
+
+  ;; Use less colors for indicators such as git:gutter, flycheck and similar
+  (setq solarized-emphasize-indicators nil)
+
+  ;; Don't change size of org-mode headlines (but keep other size-changes)
+  (setq solarized-scale-org-headlines nil)
+
+  ;; Avoid all font-size changes
+  (setq solarized-height-minus-1 1)
+  (setq solarized-height-plus-1 1)
+  (setq solarized-height-plus-2 1)
+  (setq solarized-height-plus-3 1)
+  (setq solarized-height-plus-4 1))
+
+;;; OS X support
+(use-package ns-win                     ; OS X window support
+  :defer t
+  :if (eq system-type 'darwin)
+  :config
+  (setq ns-pop-up-frames nil            ; Don't pop up new frames from the
+                                        ; workspace
+        mac-option-modifier 'meta       ; Option is simply the natural Meta
+        mac-command-modifier 'meta      ; But command is a lot easier to hit
+        mac-right-command-modifier 'left
+        mac-right-option-modifier 'none ; Keep right option for accented input
+        ;; Just in case we ever need these keys
+        mac-function-modifier 'hyper))
+
+;;; Environment fixup
+(use-package exec-path-from-shell
+  :ensure t
+  :if (and (eq system-type 'darwin) (display-graphic-p))
+  :config
+  (progn
+    (when (string-match-p "/zsh$" (getenv "SHELL"))
+      ;; Use a non-interactive login shell.  A login shell, because my
+      ;; environment variables are mostly set in `.zprofile'.
+      (setq exec-path-from-shell-arguments '("-l")))
+
+    (dolist (var '("EMAIL" "INFOPATH" "JAVA_OPTS"))
+      (add-to-list 'exec-path-from-shell-variables var))
+
+    (exec-path-from-shell-initialize)
+
+    (setq user-mail-address (getenv "EMAIL"))
+
+    ;; Re-initialize the `Info-directory-list' from $INFOPATH.  Since package.el
+    ;; already initializes info, we need to explicitly add the $INFOPATH
+    ;; directories to `Info-directory-list'.  We reverse the list of info paths
+    ;; to prepend them in proper order subsequently
+    (with-eval-after-load 'info
+      (dolist (dir (nreverse (parse-colon-path (getenv "INFOPATH"))))
+        (when dir
+          (add-to-list 'Info-directory-list dir))))))
+
+(use-package default-text-scale
+  :ensure t)
+
 (use-package overseer
   :ensure t
   :init
@@ -410,6 +597,10 @@ Has no effect when `persp-show-modestring' is nil."
       (tester-init-test-run #'overseer-test-file "-test.el$")
       (tester-init-test-suite-run #'overseer-test))
     (add-hook 'overseer-mode-hook 'test-emacs-lisp-hook)))
+
+(use-package karma
+  :ensure t
+  :init)
 
 (use-package elisp-slime-nav
   :ensure t
@@ -443,7 +634,19 @@ Has no effect when `persp-show-modestring' is nil."
   :ensure t
   :mode (("\\.js\\'" . js2-mode)
          ("\\.js.erb\\'" . js2-mode)
-         ("\\.jsx\\'" . js2-jsx-mode)))
+         ("\\.jsx\\'" . js2-jsx-mode))
+  :bind (:map js2-mode-map
+	      ("M-j" . backward-char))
+  :config (setq js2-basic-offset 2))
+
+(use-package typescript-mode
+  :ensure t
+  :config (setq typescript-indent-level 2))
+
+(use-package coffee-mode
+  :ensure t
+  :mode (("\\.coffee\\'" . coffee-mode)
+         ("\\.coffee.erb\\'" . coffee-mode)))
 
 (use-package js2-refactor
   :ensure t
@@ -474,10 +677,9 @@ Has no effect when `persp-show-modestring' is nil."
   :ensure t
   :defer 2
   :bind (("C-x g" . magit-status))
-  :config (progn
-            (magit-wip-after-save-mode)
-            (magit-wip-after-apply-mode)
-            (magit-wip-before-change-mode)))
+  :config
+  (progn
+    (delete 'Git vc-handled-backends)))
 
 (use-package yaml-mode
   :ensure t
@@ -495,6 +697,15 @@ Has no effect when `persp-show-modestring' is nil."
                   web-mode-css-indent-offset 2
                   web-mode-code-indent-offset 2)))
 
+(use-package emmet-mode
+  :ensure t
+  :bind (:map emmet-mode-keymap
+	      ("M-e" . emmet-expand-line))
+  :config (add-hook 'web-mode-hook 'emmet-mode))
+
+(use-package sass-mode
+  :ensure t)
+
 (use-package whitespace-cleanup-mode
   :ensure t
   :bind (("C-c t c" . whitespace-cleanup-mode)
@@ -504,10 +715,8 @@ Has no effect when `persp-show-modestring' is nil."
   :diminish (whitespace-cleanup-mode))
 
 (use-package markdown-mode
-  :ensure t)
-
-(setq custom-file (expand-file-name "customize.el" user-emacs-directory))
-(load custom-file)
+  :ensure t
+  :mode ("\\.md\\'" . markdown-mode))
 
 (provide 'init)
 
