@@ -111,6 +111,7 @@
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+(load-theme 'ujelly t)
 
 ;; utf-8 all the things
 (set-terminal-coding-system 'utf-8)
@@ -133,18 +134,6 @@
       create-lockfiles nil
       ring-bell-function 'ignore
       auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
-
-(defun copy-from-osx ()
-  (shell-command-to-string "pbpaste"))
-
-(defun paste-to-osx (text &optional push)
-  (let ((process-connection-type nil))
-    (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
-      (process-send-string proc text)
-      (process-send-eof proc))))
-
-(setq interprogram-cut-function 'paste-to-osx)
-(setq interprogram-paste-function 'copy-from-osx)
 
 (server-start) ;; Allow this Emacs process to be a server for client processes.
 
@@ -513,37 +502,15 @@ Has no effect when `persp-show-modestring' is nil."
 (use-package rbenv
   :ensure t
   :defer t
-  :init (setq rbenv-show-active-ruby-in-modeline nil)
+  :init (progn
+	  (setq rbenv-show-active-ruby-in-modeline nil)
+	  (global-rbenv-mode))
   :config (progn
             (global-rbenv-mode)
             (add-hook 'enh-ruby-mode-hook 'rbenv-use-corresponding)))
 
 (use-package f
   :ensure t)
-
-(use-package solarized-theme
-  :ensure t
-  :defer t
-  :init (load-theme 'solarized-dark t)
-  :config
-  ;; make the fringe stand out from the background
-  (setq solarized-distinct-fringe-background t)
-
-  ;; Don't change the font for some headings and titles
-  (setq solarized-use-variable-pitch nil)
-
-  ;; Use less colors for indicators such as git:gutter, flycheck and similar
-  (setq solarized-emphasize-indicators nil)
-
-  ;; Don't change size of org-mode headlines (but keep other size-changes)
-  (setq solarized-scale-org-headlines nil)
-
-  ;; Avoid all font-size changes
-  (setq solarized-height-minus-1 1)
-  (setq solarized-height-plus-1 1)
-  (setq solarized-height-plus-2 1)
-  (setq solarized-height-plus-3 1)
-  (setq solarized-height-plus-4 1))
 
 ;;; OS X support
 (use-package ns-win                     ; OS X window support
@@ -704,6 +671,9 @@ Has no effect when `persp-show-modestring' is nil."
   :config (add-hook 'web-mode-hook 'emmet-mode))
 
 (use-package sass-mode
+  :ensure t)
+
+(use-package scss-mode
   :ensure t)
 
 (use-package whitespace-cleanup-mode
