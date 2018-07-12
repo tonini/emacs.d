@@ -22,3 +22,4 @@ projectile-bookmarks.eld
 projectile.cache
 tutorial/*
 .mc-lists.el
+session.*

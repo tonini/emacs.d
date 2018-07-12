@@ -44,8 +44,9 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
-(require 'diminish)
 (require 'bind-key)
+
+(use-package diminish :ensure t)
 
 ;; Customization
 (defconst tonini-custom-file (locate-user-emacs-file "customize.el")
@@ -77,12 +78,13 @@
 ;; which is rather pointless.
 (when (fboundp 'tool-bar-mode)
   (tool-bar-mode -1))
-(when (and (eq system-type 'darwin) (fboundp 'menu-bar-mode))
+(when (and (eq system-type 'gnu/linux) (fboundp 'menu-bar-mode))
   (menu-bar-mode -1))
 (when (fboundp 'scroll-bar-mode)
   (scroll-bar-mode -1))
 
 (set-default 'truncate-lines t)
+(set-default 'indent-tabs-mode nil)
 
 (delete-selection-mode 1)
 (transient-mark-mode 1)
@@ -111,7 +113,8 @@
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-(load-theme 'ujelly t)
+;; (load-theme 'ujelly t)
+(load-theme 'adwaita t)
 
 ;; utf-8 all the things
 (set-terminal-coding-system 'utf-8)
@@ -210,7 +213,7 @@
 	  company-tooltip-minimum-width 27
 	  company-idle-delay 0.3
 	  company-tooltip-limit 10
-	  company-minimum-prefix-length 2
+	  company-minimum-prefix-length 3
 	  company-tooltip-flip-when-above t))
   :bind (:map company-active-map
               ("M-k" . company-select-next)
@@ -226,8 +229,6 @@
   :load-path "~/Projects/tester.el"
   :commands (tester-run-test-file tester-run-test-suite))
 
-(use-package helm-core
-  :ensure t)
 (use-package helm
   :ensure t
   :bind (("M-a" . helm-M-x)
@@ -289,7 +290,7 @@
   :bind ("M-p" . helm-projectile-ag)
   :commands (helm-ag helm-projectile-ag)
   :init (setq helm-ag-insert-at-point 'symbol
-              helm-ag-command-option "--path-to-agignore ~/.agignore"))
+              helm-ag-command-option "--path-to-ignore ~/.agignore")) ;
 
 (use-package helm-info
   :ensure helm
@@ -387,20 +388,21 @@
   :bind (("C-p s" . projectile-persp-switch-project))
   :config
   (persp-mode)
-  (defun persp-format-name (name)
-    "Format the perspective name given by NAME for display in `persp-modestring'."
-    (let ((string-name (format "%s" name)))
-      (if (equal name (persp-name persp-curr))
-	  (propertize string-name 'face 'persp-selected-face))))
+  ;; (defun persp-format-name (name)
+  ;;   "Format the perspective name given by NAME for display in `persp-modestring'."
+  ;;   (let ((string-name (format "%s" name)))
+  ;;     (if (equal name (persp-name persp-curr))
+  ;;         (propertize string-name 'face 'persp-selected-face))))
 
-  (defun persp-update-modestring ()
-    "Update `persp-modestring' to reflect the current perspectives.
-Has no effect when `persp-show-modestring' is nil."
-    (when persp-show-modestring
-      (setq persp-modestring
-	    (append '("[")
-		    (persp-intersperse (mapcar 'persp-format-name (persp-names)) "")
-		    '("]"))))))
+;;   (defun persp-update-modestring ()
+;;     "Update `persp-modestring' to reflect the current perspectives.
+;; Has no effect when `persp-show-modestring' is nil."
+;;     (when persp-show-modestring
+;;       (setq persp-modestring
+;; 	    (append '("[")
+;; 		    (persp-intersperse (mapcar 'persp-format-name (persp-names)) "")
+;; 		    '("]")))))
+  )
 
 (use-package helm-projectile
   :ensure t
@@ -529,21 +531,9 @@ Has no effect when `persp-show-modestring' is nil."
 ;;; Environment fixup
 (use-package exec-path-from-shell
   :ensure t
-  :if (and (eq system-type 'darwin) (display-graphic-p))
   :config
   (progn
-    (when (string-match-p "/zsh$" (getenv "SHELL"))
-      ;; Use a non-interactive login shell.  A login shell, because my
-      ;; environment variables are mostly set in `.zprofile'.
-      (setq exec-path-from-shell-arguments '("-l")))
-
-    (dolist (var '("EMAIL" "INFOPATH" "JAVA_OPTS"))
-      (add-to-list 'exec-path-from-shell-variables var))
-
     (exec-path-from-shell-initialize)
-
-    (setq user-mail-address (getenv "EMAIL"))
-
     ;; Re-initialize the `Info-directory-list' from $INFOPATH.  Since package.el
     ;; already initializes info, we need to explicitly add the $INFOPATH
     ;; directories to `Info-directory-list'.  We reverse the list of info paths
@@ -637,8 +627,11 @@ Has no effect when `persp-show-modestring' is nil."
 
 (use-package drag-stuff
   :ensure t
-  :bind (("M-<up>" . drag-stuff-up)
-         ("M-<down>" . drag-stuff-down)))
+  :config
+  (progn
+    (drag-stuff-global-mode 1)
+    (drag-stuff-define-keys)
+    ))
 
 (use-package magit
   :ensure t
@@ -687,6 +680,7 @@ Has no effect when `persp-show-modestring' is nil."
 (use-package markdown-mode
   :ensure t
   :mode ("\\.md\\'" . markdown-mode))
+
 
 (provide 'init)
 

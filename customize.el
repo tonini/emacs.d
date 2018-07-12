@@ -8,6 +8,7 @@
  '(ansi-color-names-vector
    ["#073642" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#657b83"])
  '(compilation-message-face (quote default))
+ '(css-indent-offset 2)
  '(cua-global-mark-cursor-color "#2aa198")
  '(cua-normal-cursor-color "#839496")
  '(cua-overwrite-cursor-color "#b58900")
@@ -39,13 +40,14 @@
  '(hl-fg-colors
    (quote
     ("#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36")))
+ '(js-indent-level 2)
  '(magit-diff-use-overlays nil)
  '(nrepl-message-colors
    (quote
     ("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4")))
  '(package-selected-packages
    (quote
-    (magit zenburn-theme zen-burn exec-path-from-shell color-theme-sanityinc-solarized emmet-mode default-text-scale yaml-mode whitespace-cleanup-mode which-key web-mode use-package typescript-mode solarized-theme slim-mode sass-mode rubocop rspec-mode rbenv rainbow-mode rainbow-delimiters persp-projectile page-break-lines overseer markdown-mode macrostep karma js2-refactor ibuffer-projectile highlight-numbers helm-swoop helm-projectile helm-flycheck helm-descbinds helm-ag f evil-smartparens erlang enh-ruby-mode elisp-slime-nav drag-stuff company coffee-mode cask-mode beacon ag)))
+    (perspective helm-projectile jade-mode scss-mode js2-mode yasnippet projectile multiple-cursors helm helm-core smartparens magit zenburn-theme zen-burn exec-path-from-shell color-theme-sanityinc-solarized emmet-mode default-text-scale yaml-mode whitespace-cleanup-mode which-key web-mode use-package typescript-mode solarized-theme slim-mode sass-mode rubocop rspec-mode rbenv rainbow-mode rainbow-delimiters persp-projectile page-break-lines overseer markdown-mode macrostep karma js2-refactor ibuffer-projectile highlight-numbers helm-swoop helm-flycheck helm-descbinds helm-ag f evil-smartparens erlang enh-ruby-mode elisp-slime-nav drag-stuff company coffee-mode cask-mode beacon ag)))
  '(pos-tip-background-color "#073642")
  '(pos-tip-foreground-color "#93a1a1")
  '(projectile-globally-ignored-directories
@@ -54,6 +56,7 @@
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#073642" 0.2))
  '(term-default-bg-color "#002b36")
  '(term-default-fg-color "#839496")
+ '(tool-bar-mode nil)
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
    (quote
@@ -88,6 +91,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(helm-selection ((t (:background "cyan" :foreground "color-16"))))
- '(helm-source-header ((t (:background "#002b36" :foreground "gray100" :underline nil :weight normal :height 1.05))))
- '(helm-visible-mark ((t (:background "brightred" :foreground "white")))))
+ '(default ((t (:family "Source Code Pro" :foundry "ADBO" :slant normal :weight normal :height 102 :width normal)))))

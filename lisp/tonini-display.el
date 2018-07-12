@@ -22,13 +22,13 @@
 (global-hl-line-mode t)
 
 (menu-bar-mode -1)
-(tool-bar-mode 0)
+(tool-bar-mode -1)
 
 (set-frame-parameter nil 'fullscreen 'fullboth)
 (setq default-cursor-type 'box)
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-(load-theme 'ujelly t)
+;; (load-theme 'ujelly t)
 
 (defvar mode-line-cleaner-alist
   `((eldoc-mode . "")
@@ -94,5 +94,12 @@ want to use in the modeline *in lieu of* the original.")
 (eval-after-load 'flycheck
     '(progn
       (set-face-attribute 'flycheck-warning nil :foreground "yellow" :underline nil)))
+
+(defun tonini-after-init-setup ()
+  "Some setup after Emacs init."
+  (menu-bar-mode -1))
+
+(add-hook 'after-init-hook 'tonini-after-init-setup)
+
 
 (provide 'tonini-display-prt)
